@@ -656,20 +656,43 @@ Also, indent them if they are child elements of a block, list, or table element.
 
 ```html
 <ul>
-    <li>Moe
-    <li>Larry
-    <li>Curly
+    <li>Moe</li>
+    <li>Larry</li>
+    <li>Curly</li>
 </ul>
 <table>
     <thead>
         <tr>
-            <th scope="col">Income
-            <th scope="col">Taxes
+            <th scope="col">Income</th>
+            <th scope="col">Taxes</th>
+        </tr>
+    </thead>
     <tbody>
         <tr>
-            <td>$ 5.00
-            <td>$ 4.50
+            <td>$ 5.00</td>
+            <td>$ 4.50</td>
+        </tr>
+    </tbody>
 </table>
+```
+
+Do not leave off optional closing tags as it's easy to get confused and leave of required closing tags and confuse readers who don't know what is optional.
+
+If you're concerned about saving file size, use an html compiler.
+
+```html
+<!-- Not recommended -->
+<ul>
+    <li>This
+    <li>Is
+    <li>Wrong
+</ul>
+<!-- Recommended -->
+<ul>
+    <li>This</li>
+    <li>Is</li>
+    <li>Wrong</li>
+</ul>
 ```
 
 ### 3.5.1 Quotes
