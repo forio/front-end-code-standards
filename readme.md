@@ -116,15 +116,15 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   ├── jquery
 │   │   │   │   ├── jquery.min.js
 │   │   │   │   └── jquery.js
-│   │   ├── backbone
-│   │   │   ├── backbone.min.js
-│   │   │   └── backbone.js
-│   │   └── underscore
-│   │   │   ├── underscore.min.js
-│   │   │   └── underscore.js
-│   │   └── forio
-│   │   │   ├── api.min.js
-│   │   │   └── api.js
+│   │   │   ├── backbone
+│   │   │   │   ├── backbone.min.js
+│   │   │   │   └── backbone.js
+│   │   │   └── underscore
+│   │   │   │   ├── underscore.min.js
+│   │   │   │   └── underscore.js
+│   │   │   └── forio
+│   │   │   │   ├── api.min.js
+│   │   │   │   └── api.js
 │   │   └── compiled.js
 │   ├── img
 │   ├── css
