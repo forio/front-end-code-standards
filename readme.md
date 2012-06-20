@@ -1,5 +1,11 @@
 # Forio Front-End Style Guide
 
+This document was inspired by a combination of works:
+ * [Douglas Crockford - Code Conventions for the JavaScript Programming Language](http://javascript.crockford.com/code.html)
+ * [Google - Javascript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+ * [Google - HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml#Indentation)
+ * [HTML Boilerplate - Documentation](http://html5boilerplate.com/docs)
+
 # General
 
 **BE CONSISTENT**
@@ -24,7 +30,6 @@ The unit of indentation is four spaces. Use of tabs should be avoided because (a
  * [Underscore.js](http://underscorejs.org/)
 
 # Javascript
-This document was inspired by a combination of style guides originally authored by [Douglas Crockford](http://javascript.crockford.com/code.html) and [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
 ## Names
 In general use:
@@ -451,7 +456,6 @@ var myString = 'A rather long string of English text, an error message ' +
 ```
 
 # HTML and CSS
-This portion of the document borrows heavily from [Google](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and [HTML5Boilerplate](http://html5boilerplate.com/docs)
 
 ## The `<html>`, `<head>`, and `<body>` Tags
 
