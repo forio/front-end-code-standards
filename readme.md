@@ -501,6 +501,8 @@ There are a few different options that you can use with this meta tag. You can f
 </script>
 ```
 
+[How it works](http://mathiasbynens.be/notes/async-analytics-snippet)
+
 ## HTML Formatting
 
 Use a new line for every block, list, or table element, and indent every such child element.
@@ -873,5 +875,3 @@ body {
     margin-left: 20px;
 }
 ```
-
-[How it works](http://mathiasbynens.be/notes/async-analytics-snippet)
