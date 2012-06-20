@@ -108,7 +108,7 @@ Filenames should be all lowercase in order to avoid confusion on case-sensitive 
 Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
 
 ## 1.3 Project Structure
-
+```
 ├── index.html
 ├── public
 │   ├── js
@@ -152,6 +152,7 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   ├── router.js
 │   ├── app.js 
 │   └── style.css
+```
 
 ## 1.4 Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
