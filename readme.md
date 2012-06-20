@@ -8,82 +8,82 @@ This document was inspired by a combination of works:
 
 # Table of Contents
 
-    * [General](https://github.com/dwick/forio-style-guide#general)
-        * [Filenames](https://github.com/dwick/forio-style-guide#filenames)
-        * [Indentation](https://github.com/dwick/forio-style-guide#indentation)
-        * [Helpful Resources](https://github.com/dwick/forio-style-guide#helpful-resources)
-    * [Javascript](https://github.com/dwick/forio-style-guide#javascript)
-        * [Strings](https://github.com/dwick/forio-style-guide#strings)
-        * [Names](https://github.com/dwick/forio-style-guide#names)
-            * [Constants](https://github.com/dwick/forio-style-guide#constants)
-            * [Private variables](https://github.com/dwick/forio-style-guide#private-variables)
-            * [Constructors](https://github.com/dwick/forio-style-guide#constructors)
-            * [Namespaces](https://github.com/dwick/forio-style-guide#namespaces)
-            * [jQuery Elements](https://github.com/dwick/forio-style-guide#jquery-elements)
-        * [Comments](https://github.com/dwick/forio-style-guide#comments)
-        * [Variable Declarations](https://github.com/dwick/forio-style-guide#variable-declarations)
-        * [Function Declarations](https://github.com/dwick/forio-style-guide#function-declarations)
-        * [Statements](https://github.com/dwick/forio-style-guide#statements)
-            * [Compound Statements](https://github.com/dwick/forio-style-guide#compound-statements)
-            * [return Statement](https://github.com/dwick/forio-style-guide#return-statement)
-            * [if Statement](https://github.com/dwick/forio-style-guide#if-statement)
-            * [for Statement](https://github.com/dwick/forio-style-guide#for-statement)
-            * [while Statement](https://github.com/dwick/forio-style-guide#while-statement)
-            * [do Statement](https://github.com/dwick/forio-style-guide#do-statement)
-            * [switch Statement](https://github.com/dwick/forio-style-guide#switch-statement)
-            * [try Statement](https://github.com/dwick/forio-style-guide#try-statement)
-            * [continue Statement](https://github.com/dwick/forio-style-guide#continue-statement)
-            * [with Statement](https://github.com/dwick/forio-style-guide#with-statement)
-        * [Whitespace](https://github.com/dwick/forio-style-guide#whitespace)
-        * [Do s](https://github.com/dwick/forio-style-guide#dos)
-        * [Don't s](https://github.com/dwick/forio-style-guide#donts)
-            * [Use of CoffeeScript in Production](https://github.com/dwick/forio-style-guide#use-of-coffeescript-in-production)
-            * [Modification of Built-in Objects and Custom Libraries](https://github.com/dwick/forio-style-guide#Modification-of-built-in-objects-and-custom-libraries)
-            * [Confusing Pluses and Minuses](https://github.com/dwick/forio-style-guide#confusing-pluses-and-minuses)
-            * [eval is Evil](https://github.com/dwick/forio-style-guide#eval-is-evil)
-            * [Internet Explorer's Conditional Comments](https://github.com/dwick/forio-style-guide#internet-explorers-conditional-comments)
-            * [Multiline String Literals](https://github.com/dwick/forio-style-guide#multiline-string-literals)
-    * [HTML and CSS](https://github.com/dwick/forio-style-guide#html-and-css)
-        * [The <html>, <head>, and <body> Elements](https://github.com/dwick/forio-style-guide#the-html-head-and-body-elements)
-        * [Doctype and Encoding](https://github.com/dwick/forio-style-guide#doctype-and-encoding)
-        * [Other Important <meta> Elements](https://github.com/dwick/forio-style-guide#other-important-meta-elements)
-            * [Use the Latest Rendering Engine](https://github.com/dwick/forio-style-guide#use-the-latest-rendering-engine)
-            * [Mobile Viewport](https://github.com/dwick/forio-style-guide#mobile-viewport)
-        * [Optimized Google Analytics Snippet](https://github.com/dwick/forio-style-guide#optimized-google-analytics-snippet)
-        * [HTML Formatting](https://github.com/dwick/forio-style-guide#html-formatting)
-            * [Quotes](https://github.com/dwick/forio-style-guide#quotes)
-            * [Capitalization](https://github.com/dwick/forio-style-guide#capitalization)
-            * [Trailing Whitespace](https://github.com/dwick/forio-style-guide#trailing-whitespace)
-            * [Enitty References](https://github.com/dwick/forio-style-guide#entity-references)
-            * [Optional Elements](https://github.com/dwick/forio-style-guide#optional-elements)
-            * [Optional Attributes](https://github.com/dwick/forio-style-guide#optional-attributes)
-        * [Semantics](https://github.com/dwick/forio-style-guide#semantics)
-        * [Seperation of Concerns](https://github.com/dwick/forio-style-guide#separation-of-concerns)
-        * [ID and Class Naming](https://github.com/dwick/forio-style-guide#id-and-class-naming)
-            * [Use Meaningful or Generic ID and Class Names](https://github.com/dwick/forio-style-guide#use-meaningful-or-generic-id-and-class-names)
-            * [Use Names That are as Short as Possible but as Long as Necessary](https://github.com/dwick/forio-style-guide#use-names-that-are-as-short-as-possible-but-as-long-as-necessary)
-        * [Selector Performance](https://github.com/dwick/forio-style-guide#selector-performance)
-            * [Avoid a Universal Key Selector](https://github.com/dwick/forio-style-guide#avoid-a-universal-key-selector)
-            * [Make your Rules as Specific as Possible](https://github.com/dwick/forio-style-guide#make-your-rules-as-specific-as-possible)
-            * [Remove Redundant Qualifiers](https://github.com/dwick/forio-style-guide#remove-redundant-qualifiers)
-        * [CSS Formatting](https://github.com/dwick/forio-style-guide#css-formatting)
-            * [Shorthand Properties](https://github.com/dwick/forio-style-guide#shorthand-properties)
-            * [0 and Units](https://github.com/dwick/forio-style-guide#0-and-units)
-            * [Quotation Marks in URI Values](https://github.com/dwick/forio-style-guide#quotation-marks-in-uri-values)
-            * [Hexidecimal Notation](https://github.com/dwick/forio-style-guide#hexadecimal-notation)
-            * [Prefixes](https://github.com/dwick/forio-style-guide#prefixes)
-            * [ID and Class Name Delimiters](https://github.com/dwick/forio-style-guide#id-and-class-name-delimiters)
-            * [Order](https://github.com/dwick/forio-style-guide#order)
-            * [Block Content Indentation](https://github.com/dwick/forio-style-guide#block-content-indentation)
-            * [Semicolons](https://github.com/dwick/forio-style-guide#semicolons)
-            * [Property Name Stops](https://github.com/dwick/forio-style-guide#property-name-stops)
-            * [Selector and Delaration Seperation](https://github.com/dwick/forio-style-guide#selector-and-declaration-separation)
-            * [Rule Seperation](https://github.com/dwick/forio-style-guide#rule-separation)
-        * [Conditional Stylesheets/CSS Hacks](https://github.com/dwick/forio-style-guide#conditional-stylesheetscss-hacks)
-        
+* 1.0 [General](https://github.com/dwick/forio-style-guide#general)
+    * 1.1 [Filenames](https://github.com/dwick/forio-style-guide#filenames)
+    * 1.2 [Indentation](https://github.com/dwick/forio-style-guide#indentation)
+    * 1.3 [Helpful Resources](https://github.com/dwick/forio-style-guide#helpful-resources)
+* 2.0. [Javascript](https://github.com/dwick/forio-style-guide#javascript)
+    * 2.1 [Strings](https://github.com/dwick/forio-style-guide#strings)
+    * 2.2.0 [Names](https://github.com/dwick/forio-style-guide#names)
+        * 2.2.1 [Constants](https://github.com/dwick/forio-style-guide#constants)
+        * 2.2.2 [Private variables](https://github.com/dwick/forio-style-guide#private-variables)
+        * 2.2.3 [Constructors](https://github.com/dwick/forio-style-guide#constructors)
+        * 2.2.4 [Namespaces](https://github.com/dwick/forio-style-guide#namespaces)
+        * 2.2.5 [jQuery Elements](https://github.com/dwick/forio-style-guide#jquery-elements)
+    * 2.3 [Comments](https://github.com/dwick/forio-style-guide#comments)
+    * 2.4 [Variable Declarations](https://github.com/dwick/forio-style-guide#variable-declarations)
+    * 2.5 [Function Declarations](https://github.com/dwick/forio-style-guide#function-declarations)
+    * 2.6.0 [Statements](https://github.com/dwick/forio-style-guide#statements)
+        * 2.6.1 [Compound Statements](https://github.com/dwick/forio-style-guide#compound-statements)
+        * 2.6.2 [return Statement](https://github.com/dwick/forio-style-guide#return-statement)
+        * 2.6.3 [if Statement](https://github.com/dwick/forio-style-guide#if-statement)
+        * 2.6.4 [for Statement](https://github.com/dwick/forio-style-guide#for-statement)
+        * 2.6.5 [while Statement](https://github.com/dwick/forio-style-guide#while-statement)
+        * 2.6.6 [do Statement](https://github.com/dwick/forio-style-guide#do-statement)
+        * 2.6.7 [switch Statement](https://github.com/dwick/forio-style-guide#switch-statement)
+        * 2.6.8 [try Statement](https://github.com/dwick/forio-style-guide#try-statement)
+        * 2.6.9 [continue Statement](https://github.com/dwick/forio-style-guide#continue-statement)
+        * 2.6.10 [with Statement](https://github.com/dwick/forio-style-guide#with-statement)
+    * 2.7 [Whitespace](https://github.com/dwick/forio-style-guide#whitespace)
+    * 2.8 [Do s](https://github.com/dwick/forio-style-guide#dos)
+    * 2.9.0 [Don't s](https://github.com/dwick/forio-style-guide#donts)
+        * 2.9.1 [Use of CoffeeScript in Production](https://github.com/dwick/forio-style-guide#use-of-coffeescript-in-production)
+        * 2.9.2 [Modification of Built-in Objects and Custom Libraries](https://github.com/dwick/forio-style-guide#Modification-of-built-in-objects-and-custom-libraries)
+        * 2.9.3 [Confusing Pluses and Minuses](https://github.com/dwick/forio-style-guide#confusing-pluses-and-minuses)
+        * 2.9.4 [eval is Evil](https://github.com/dwick/forio-style-guide#eval-is-evil)
+        * 2.9.5 [Internet Explorer's Conditional Comments](https://github.com/dwick/forio-style-guide#internet-explorers-conditional-comments)
+        * 2.9.6 [Multiline String Literals](https://github.com/dwick/forio-style-guide#multiline-string-literals)
+* 3.0 [HTML and CSS](https://github.com/dwick/forio-style-guide#html-and-css)
+    * 3.1 [The <html>, <head>, and <body> Elements](https://github.com/dwick/forio-style-guide#the-html-head-and-body-elements)
+    * 3.2 [Doctype and Encoding](https://github.com/dwick/forio-style-guide#doctype-and-encoding)
+    * 3.3.0 [Other Important <meta> Elements](https://github.com/dwick/forio-style-guide#other-important-meta-elements)
+        * 3.3.1 [Use the Latest Rendering Engine](https://github.com/dwick/forio-style-guide#use-the-latest-rendering-engine)
+        * 3.3.2 [Mobile Viewport](https://github.com/dwick/forio-style-guide#mobile-viewport)
+    * 3.4 [Optimized Google Analytics Snippet](https://github.com/dwick/forio-style-guide#optimized-google-analytics-snippet)
+    * 3.5.0 [HTML Formatting](https://github.com/dwick/forio-style-guide#html-formatting)
+        * 3.5.1 [Quotes](https://github.com/dwick/forio-style-guide#quotes)
+        * 3.5.2 [Capitalization](https://github.com/dwick/forio-style-guide#capitalization)
+        * 3.5.3 [Trailing Whitespace](https://github.com/dwick/forio-style-guide#trailing-whitespace)
+        * 3.5.4 [Enitty References](https://github.com/dwick/forio-style-guide#entity-references)
+        * 3.5.5 [Optional Elements](https://github.com/dwick/forio-style-guide#optional-elements)
+        * 3.5.6 [Optional Attributes](https://github.com/dwick/forio-style-guide#optional-attributes)
+    * 3.6 [Semantics](https://github.com/dwick/forio-style-guide#semantics)
+    * 3.7 [Seperation of Concerns](https://github.com/dwick/forio-style-guide#separation-of-concerns)
+    * 3.8.0 [ID and Class Naming](https://github.com/dwick/forio-style-guide#id-and-class-naming)
+        * 3.8.1 [Use Meaningful or Generic ID and Class Names](https://github.com/dwick/forio-style-guide#use-meaningful-or-generic-id-and-class-names)
+        * 3.8.2 [Use Names That are as Short as Possible but as Long as Necessary](https://github.com/dwick/forio-style-guide#use-names-that-are-as-short-as-possible-but-as-long-as-necessary)
+    * 3.9.0 [Selector Performance](https://github.com/dwick/forio-style-guide#selector-performance)
+        * 3.9.1 [Avoid a Universal Key Selector](https://github.com/dwick/forio-style-guide#avoid-a-universal-key-selector)
+        * 3.9.2 [Make your Rules as Specific as Possible](https://github.com/dwick/forio-style-guide#make-your-rules-as-specific-as-possible)
+        * 3.9.3 [Remove Redundant Qualifiers](https://github.com/dwick/forio-style-guide#remove-redundant-qualifiers)
+    * 3.10.0 [CSS Formatting](https://github.com/dwick/forio-style-guide#css-formatting)
+        * 3.10.1 [Shorthand Properties](https://github.com/dwick/forio-style-guide#shorthand-properties)
+        * 3.10.2 [0 and Units](https://github.com/dwick/forio-style-guide#0-and-units)
+        * 3.10.3 [Quotation Marks in URI Values](https://github.com/dwick/forio-style-guide#quotation-marks-in-uri-values)
+        * 3.10.4 [Hexidecimal Notation](https://github.com/dwick/forio-style-guide#hexadecimal-notation)
+        * 3.10.5 [Prefixes](https://github.com/dwick/forio-style-guide#prefixes)
+        * 3.10.6 [ID and Class Name Delimiters](https://github.com/dwick/forio-style-guide#id-and-class-name-delimiters)
+        * 3.10.7 [Order](https://github.com/dwick/forio-style-guide#order)
+        * 3.10.8 [Block Content Indentation](https://github.com/dwick/forio-style-guide#block-content-indentation)
+        * 3.10.9 [Semicolons](https://github.com/dwick/forio-style-guide#semicolons)
+        * 3.10.10 [Property Name Stops](https://github.com/dwick/forio-style-guide#property-name-stops)
+        * 3.10.11 [Selector and Delaration Seperation](https://github.com/dwick/forio-style-guide#selector-and-declaration-separation)
+        * 3.10.12 [Rule Seperation](https://github.com/dwick/forio-style-guide#rule-separation)
+    * 3.11 [Conditional Stylesheets/CSS Hacks](https://github.com/dwick/forio-style-guide#conditional-stylesheetscss-hacks)
 
 
-# General
+
+# 1.0 General
 
 **BE CONSISTENT**
 
@@ -91,24 +91,24 @@ If you're editing code, take a few minutes to look at the code around you and de
 
 The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
 
-## Filenames
+## 1.1 Filenames
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should contain no punctuation except for - or _ (prefer - to _).
 
 Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
 
-## Indentation
+## 1.2 Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
 
-## Helpful Resources
+## 1.3 Helpful Resources
 
  * [HTML5 Boilerplate](http://html5boilerplate.com/)
  * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
  * [Underscore.js](http://underscorejs.org/)
 
-# Javascript
+# 2.0 Javascript
 
-## Strings
+## 2.1 Strings
 
 Prefer `'` over `"`
 For consistency  `'` (single-quotes) are preferred to `"` (double-quotes). This is helpful when creating strings that include HTML:
@@ -117,7 +117,7 @@ For consistency  `'` (single-quotes) are preferred to `"` (double-quotes). This 
 var msg = '<p class="message">This is some HTML<p>';
 ```
 
-## Names
+## 2.2.0 Names
 In general use:
  * functionNamesLikeThis
  * variableNamesLikeThis
@@ -125,7 +125,7 @@ In general use:
  * ConstructorNamesLikeThis
  * SYMBOLIC_CONSTANTS_LIKE_THIS
 
-### Constants
+### 2.2.1 Constants
 Use NAMES_LIKE_THIS for constants; never use the `const` keyword.
 
 ```javascript
