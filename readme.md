@@ -1,17 +1,30 @@
 # Forio Front-End Style Guide
 
+# General
 
-# Javascript
-This document was inspired by a combination of style guides originally authored by [Douglas Crockford](http://javascript.crockford.com/code.html) and [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+**BE CONSISTENT**
+
+If you're editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
+
+The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
 
 ## Filenames
 
-Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should end in .js, and should contain no punctuation except for - or _ (prefer - to _).
+Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should contain no punctuation except for - or _ (prefer - to _).
 
 Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
 
 ## Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
+
+## Helpful resources
+
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+ * [Underscore.js](http://underscorejs.org/)
+
+# Javascript
+This document was inspired by a combination of style guides originally authored by [Douglas Crockford](http://javascript.crockford.com/code.html) and [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
 ## Names
 In general use:
@@ -535,10 +548,6 @@ This way, we can use consistent quotes when writing HTML inside of JS:
 alert('<a href="foo">bar</a>');
 ```
 
-### Indentation
-
-Use 4 spaces.
-
 ### Capitalization
 
 Use lowercase only.
@@ -866,16 +875,3 @@ body {
 ```
 
 [How it works](http://mathiasbynens.be/notes/async-analytics-snippet)
-
-# BE CONSISTENT
-
-If you're editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
-
-The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
-
-# Helpful resources
-
- * [HTML5 Boilerplate](http://html5boilerplate.com/)
- * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
- * [Underscore.js](http://underscorejs.org/)
-
