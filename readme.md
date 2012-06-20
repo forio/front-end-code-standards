@@ -1,7 +1,8 @@
 # Forio Front-End Style Guide
-This document was inspired by a combination of style guides originally authored by [Douglas Crockford](http://javascript.crockford.com/code.html) and [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
+
 
 # Javascript
+This document was inspired by a combination of style guides originally authored by [Douglas Crockford](http://javascript.crockford.com/code.html) and [Google](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml).
 
 ## Filenames
 
@@ -372,13 +373,7 @@ Blank spaces should be used in the following circumstances:
     ```
  * Use array and object literals
  * Commit often
-
-**BE CONSISTENT**.
-
-If you're editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
-
-The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
-
+ * Use JSHint in your editor. (TextMate Bundle)[http://fgnass.posterous.com/jslint-in-textmate]
 
 ## Don't`s
  
@@ -442,5 +437,445 @@ var myString = 'A rather long string of English text, an error message ' +
     'just gravy.  Have a nice day.';
 ```
 
+# HTML and CSS
+This portion of the document borrows heavily from [Google](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml) and [HTML5Boilerplate](http://html5boilerplate.com/docs)
 
+## The `<html>`, `<head>`, and `<body>` Tags
+
+HTML5 doesn’t require the `<html>`, `<head>` and `<body>` tags (browsers add them if missing), but you should always use them!
+
+If, for example, you omit the `<body>` tag in IE, use the html5shiv and don't have any visible content (like text, images, etc.) in front of a new HTML5 element, that element with all the content from inside it will be included by IE in the `<head>` tag.
+
+## Doctype and encoding
+
+Always use the HTML5 doctype `<!doctype html>` and utf-8 encoding `<meta charset="utf-8">`.
+
+The encoding should come in the first [1024 Bytes](http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
+
+## Other important `<meta>` tags
+
+### Use the latest rendering engine
+
+Versions 8 and 9 of Internet Explorer contain multiple rendering engines. So even if a site visitor is using IE8 or IE9, it’s possible that they're not using the latest rendering engine their browser contains. To fix this, use:
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+```
+The meta tag tells the IE rendering engine two things:
+
+1. It should use the latest, or edge, version of the IE rendering environment
+2. If already installed, it should use the Google Chrome Frame rendering engine.
+
+This meta tag ensures that anyone browsing your site in IE is treated to the best possible user experience that their browser can offer.
+
+### Mobile viewport
+
+```html
+<meta name="viewport" content="width=device-width">
+```
+
+There are a few different options that you can use with this meta tag. You can find out more in the [Apple developer docs](http://j.mp/mobileviewport).
+
+## Optimized Google Analytics snippet
+
+```html
+<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. -->
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+```
+
+## HTML Formatting
+
+Use a new line for every block, list, or table element, and indent every such child element.
+Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.
+
+Also, indent them if they are child elements of a block, list, or table element.
+
+(If you run into issues around whitespace between list items it is acceptable to put all li elements in one line. A linter is encouraged to throw a warning instead of an error.)
+
+```html
+<blockquote>
+    <p><em>Space</em>, the final frontier.</p>
+</blockquote>
+```
+
+```html
+<ul>
+    <li>Moe
+    <li>Larry
+    <li>Curly
+</ul>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Income
+            <th scope="col">Taxes
+    <tbody>
+        <tr>
+            <td>$ 5.00
+            <td>$ 4.50
+</table>
+```
+
+### Quotes
+
+In HTML, we use `"` (double quotes) around attribute values, like this:
+
+```html
+<a href="foo">bar</a>
+```
+
+This way, we can use consistent quotes when writing HTML inside of JS:
+
+```javascript
+alert('<a href="foo">bar</a>');
+```
+
+### Indentation
+
+Use 4 spaces.
+
+### Capitalization
+
+Use lowercase only.
+
+All code has to be lowercase: this applies to element names, attributes, attribute values (unless text/CDATA), selectors, properties, and property values (with the exception of strings).
+
+### Trailing whitespace
+
+Remove trailing white spaces.
+Trailing white spaces are unnecessary and can complicate diffs.
+
+### Entity references
+
+Use entity references only where required `<`, `>`, and `&`  as well as control or "invisible" characters (like no-break spaces).
+
+There is no need to use entity references like &mdash;, &rdquo;, or &#x263a;, assuming the same encoding (UTF-8) is used for files and editors as well as among teams.
+
+```html
+<!-- Not recommended -->
+The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+<!-- Recommended -->
+The currency symbol for the Euro is “€”.
+```
+
+### Optional tags
+
+Omitting [optional tags](http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission) can be useful for file size optimization, but be clear and consistent.
+
+### Optional attributes
+
+Omit optional attributes on script and stylesheets.
+
+## Semantics
+
+Use HTML according to its purpose.
+Use elements for what they have been created for. For example, use `<header>` elements for headings, `<p>` elements for paragraphs, `<a>` elements for anchors, etc.
+
+Using HTML according to its purpose is important for accessibility, reuse, and code efficiency reasons.
+
+```html
+<!-- Not recommended -->
+<div onclick="goToRecommendations();">All recommendations</div>
+<!-- Recommended -->
+<a href="recommendations/">All recommendations</a>
+```
+
+## Separation of concerns
+
+Avoid inline javascript/CSS in markup.
+
+```html
+<!-- Not recommended -->
+<!DOCTYPE html>
+<title>HTML sucks</title>
+<link rel="stylesheet" href="base.css" media="screen">
+<link rel="stylesheet" href="grid.css" media="screen">
+<link rel="stylesheet" href="print.css" media="print">
+<h1 style="font-size: 1em;">HTML sucks</h1>
+<p>I’ve read about this on a few sites but now I’m sure:
+  <u>HTML is stupid!!1</u>
+<center>I can’t believe there’s no way to control the styling of
+  my website without doing everything all over again!</center>
+```
+
+## ID and class naming
+
+### Use meaningful or generic ID and class names.
+Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
+
+Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
+
+Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as "helpers."
+
+Using functional or generic names reduces the probability of unnecessary document or template changes.
+
+```css
+/* Not recommended: meaningless */
+#yee-1901 {}
+
+/* Not recommended: presentational */
+.button-green {}
+.clear {}
+
+/* Recommended: specific */
+#gallery {}
+#login {}
+.video {}
+
+/* Recommended: generic */
+.aux {}
+.alt {}
+```
+
+### Use names that are as short as possible but as long as necessary
+
+Try to convey what an ID or class is about while being as brief as possible.
+
+Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
+
+```css
+/* Not recommended */
+#navigation {}
+.atr {}
+/* Recommended */
+#nav {}
+.author {}
+```
+
+## Selector performance
+
+Selectors are matched right to left.  The right most being the key selector.
+
+Avoiding inefficient key selectors that match large numbers of elements can [speed up page rendering](https://developers.google.com/speed/docs/best-practices/rendering).
+
+### Avoid a universal key selector.
+```css
+body * {...}
+.hide-scrollbars * {...}
+```
+Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
+
+### Make your rules as specific as possible.
+Prefer class and ID selectors over tag selectors.
+
+### Remove redundant qualifiers.
+These qualifiers are redundant:
+ * ID selectors qualified by class and/or tag selectors
+ * Class selectors qualified by tag selectors (when a class is only used for one tag, which is a good design practice anyway).
+
+```css
+/* Not recommended */
+ul#example {}
+div.error {}
+
+/* Recommended */
+#example {}
+.error {}
+```
+
+## CSS Formatting
+
+### Shorthand properties
+Use shorthand properties where possible.
+CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
+
+Using shorthand properties is useful for code efficiency and understandability.
+
+```css
+/* Not recommended */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+
+/* Recommended */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+```
+
+### 0 and units
+Do not use units after 0 values unless they are required.
+
+```css
+margin: 0;
+padding: 0;
+```
+
+### Quotation marks in URI values
+
+Omit quotation marks in URI values.
+Do not use `""`, `'` (quotation marks) with `url()`.
+
+```css
+@import url(//www.google.com/css/go.css);
+```
+
+### Hexadecimal notation
+Use 3 character hexadecimal notation where possible.
+For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
+
+```css
+/* Not recommended */
+color: #eebbcc;
+
+/* Recommended */
+color: #ebc;
+````
+
+### Prefixes
+
+Prefix selectors with an application-specific prefix (optional).
+In large projects as well as for code that gets embedded in other projects or on external sites use prefixes (as namespaces) for ID and class names. Use short, unique identifiers followed by a dash.
+
+Using namespaces helps preventing naming conflicts and can make maintenance easier, for example in search and replace operations.
+
+```css
+.adw-help {} /* AdWords */
+#maia-note {} /* Maia */
+```
+
+### ID and class name delimiters
+Separate words in ID and class names by a hyphen.
+Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
+
+```css
+/* Not recommended: does not separate the words “demo” and “image” */
+.demoimage {}
+
+/* Not recommended: uses underscore instead of hyphen */
+.error_status {}
+
+/* Recommended */
+#video-id {}
+.ads-sample {}
+```
+
+### Order
+
+Alphabetize declarations.
+Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
+
+Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. `-moz` prefix comes before `-webkit`).
+
+```css
+background: fuchsia;
+border: 1px solid;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+color: black;
+text-align: center;
+text-indent: 2em;
+```
+
+### Block content indentation
+Indent all block content.
+Indent all block content, that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
+
+```css
+@media screen, projection {
+    html {
+        background: #fff;
+        color: #444;
+    }
+}
+```
+
+### Semicolons
+
+Use them.
+
+### Property name stops
+
+Use a space after a property name’s colon.
+Always use a single space between property and value (but no space between property and colon) for consistency reasons.
+
+```css
+/* Not recommended */
+h3 {
+    font-weight:bold;
+}
+
+/* Recommended */
+h3 {
+    font-weight: bold;
+}
+```
+
+### Selector and declaration separation
+
+Separate selectors and declarations by new lines.
+Always start a new line for each selector and declaration.
+
+```css
+/* Not recommended */
+a:focus, a:active {
+    position: relative; top: 1px;
+}
+
+/* Recommended */
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+```
+
+### Rule separation
+
+Separate rules by new lines.
+Always put a line between rules.
+
+```css
+html {
+    background: #fff;
+}
+
+body {
+    margin: auto;
+    width: 50%;
+}
+```
+
+## Conditional stylesheets/CSS hacks
+
+[Neither](http://aulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
+
+```html
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+```
+
+```css
+.ie8 legend {
+    margin-left: 20px;
+}
+```
+
+[How it works](http://mathiasbynens.be/notes/async-analytics-snippet)
+
+# BE CONSISTENT
+
+If you're editing code, take a few minutes to look at the code around you and determine its style. If they use spaces around all their arithmetic operators, you should too. If their comments have little boxes of hash marks around them, make your comments have little boxes of hash marks around them too.
+
+The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
+
+# Helpful resources
+
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+ * [Underscore.js](http://underscorejs.org/)
 
