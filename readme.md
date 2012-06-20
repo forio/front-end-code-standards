@@ -391,7 +391,7 @@ Blank spaces should be used in the following circumstances:
     ```
  * Use array and object literals
  * Commit often
- * Use JSHint in your editor. (TextMate Bundle)[http://fgnass.posterous.com/jslint-in-textmate]
+ * Use JSHint in your editor. [TextMate Bundle](http://fgnass.posterous.com/jslint-in-textmate)
 
 ## Don't`s
  
