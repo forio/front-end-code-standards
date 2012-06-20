@@ -9,9 +9,10 @@ This document was inspired by a combination of works:
 # Table of Contents
 
 ### 1.0 [General](https://github.com/dwick/forio-style-guide#10-general)
-* 1.1 [Filenames](https://github.com/dwick/forio-style-guide#11-filenames)
-* 1.2 [Indentation](https://github.com/dwick/forio-style-guide#12-indentation)
-* 1.3 [Helpful Resources](https://github.com/dwick/forio-style-guide#13-helpful-resources)
+* 1.1 [Helpful Resources](https://github.com/dwick/forio-style-guide#11-helpful-resources)
+* 1.2 [Filenames](https://github.com/dwick/forio-style-guide#12-filenames)
+* 1.3 [Project Structure](https://github.com/dwick/forio-style-guide#13-project-structure)
+* 1.4 [Indentation](https://github.com/dwick/forio-style-guide#14-indentation)
 
 ### 2.0 [Javascript](https://github.com/dwick/forio-style-guide#20-javascript)
 * 2.1 [Strings](https://github.com/dwick/forio-style-guide#21-strings)
@@ -94,20 +95,68 @@ If you're editing code, take a few minutes to look at the code around you and de
 
 The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you're saying rather than on how you're saying it. We present global style rules here so people know the vocabulary, but local style is also important. If code you add to a file looks drastically different from the existing code around it, it throws readers out of their rhythm when they go to read it. Avoid this.
 
-## 1.1 Filenames
+## 1.1 Helpful Resources
+
+ * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+ * [Underscore.js](http://underscorejs.org/)
+
+## 1.2 Filenames
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should contain no punctuation except for - or _ (prefer - to _).
 
 Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
 
-## 1.2 Indentation
+## 1.3 Project Structure
+
+├── index.html
+├── public
+│   ├── js
+│   │   ├── vendor
+│   │   │   ├── jquery
+│   │   │   │   ├── jquery.min.js
+│   │   │   │   └── jquery.js
+│   │   ├── backbone
+│   │   │   ├── backbone.min.js
+│   │   │   └── backbone.js
+│   │   └── underscore
+│   │   │   ├── underscore.min.js
+│   │   │   └── underscore.js
+│   │   └── forio
+│   │   │   ├── api.min.js
+│   │   │   └── api.js
+│   │   └── compiled.js
+│   ├── img
+│   ├── css
+│   │   └── style.css
+├── src
+│   ├── less
+│   │   ├── bootstrap
+│   │   │   ├── variables.less
+│   │   │   ├── ...
+│   │   │   └── bootstrap.less
+│   │   ├── app
+│   │   │   ├── header.less
+│   │   │   ├── ...
+│   │   │   └── footer.less
+│   │   └── style.less
+│   ├── templates
+│   ├── js
+│   │   ├── models
+│   │   │   ├── user.js
+│   │   │   └── run.js
+│   │   ├── collections
+│   │   │   ├── users.js
+│   │   │   └── runs.js
+│   │   └── views
+│   ├── router.js
+│   ├── app.js 
+│   └── style.css
+
+## 1.4 Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
 
-## 1.3 Helpful Resources
 
- * [HTML5 Boilerplate](http://html5boilerplate.com/)
- * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
- * [Underscore.js](http://underscorejs.org/)
 
 # 2.0 Javascript
 
