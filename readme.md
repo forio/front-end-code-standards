@@ -13,7 +13,7 @@ This document was inspired by a combination of works:
 * 1.2 [Indentation](https://github.com/dwick/forio-style-guide#12-indentation)
 * 1.3 [Helpful Resources](https://github.com/dwick/forio-style-guide#13-helpful-resources)
 
-### 2.0. [Javascript](https://github.com/dwick/forio-style-guide#20-javascript)
+### 2.0 [Javascript](https://github.com/dwick/forio-style-guide#20-javascript)
 * 2.1 [Strings](https://github.com/dwick/forio-style-guide#21-strings)
 * 2.2.0 [Names](https://github.com/dwick/forio-style-guide#220-names)
     * 2.2.1 [Constants](https://github.com/dwick/forio-style-guide#221-constants)
