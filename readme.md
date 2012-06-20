@@ -6,6 +6,82 @@ This document was inspired by a combination of works:
  * [Google - HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml#Indentation)
  * [HTML Boilerplate - Documentation](http://html5boilerplate.com/docs)
 
+# Table of Contents
+    - [General](#general)
+        - [Filenames](#filenames)
+        - [Indentation](#indentation)
+        - [Helpful Resources](#helpful-resources)
+    - [Javascript](#javascript)
+        - [Strings](#strings)
+        - [Names](#names)
+            - [Constants](#constants)
+            - [Private variables](#private-variables)
+            - [Constructors](#constructors)
+            - [Namespaces](#namespaces)
+            - [jQuery Elements](#jquery-elements)
+        - [Comments](#comments)
+        - [Variable Declarations](#variable-declarations)
+        - [Function Declarations](#function-declarations)
+        - [Statements](#statements)
+            - [Compound Statements](#compound-statements)
+            - [`return` Statement](#return-statement)
+            - [`if Statement`](#if-statement)
+            - [`for` Statement](#for-statement)
+            - [`while` Statement](#while-statement)
+            - [`do` Statement](#do-statement)
+            - [`switch` Statement](#switch-statement)
+            - [`try` Statement](#try-statement)
+            - [`continue` Statement](#continue-statement)
+            - [`with` Statement](#with-statement)
+        - [Whitespace](#whitespace)
+        - [Do`s](#dos)
+        - [Don't`s](#donts)
+            - [Use of CoffeeScript in Production](#use-of-coffeescript-in-production)
+            - [Modification of Built-in Objects and Custom Libraries](#Modification-of-built-in-objects-and-custom-libraries)
+            - [Confusing Pluses and Minuses](#confusing-pluses-and-minuses)
+            - [`eval` is Evil](#eval-is-evil)
+            - [Internet Explorer's Conditional Comments](#internet-explorers-conditional-comments)
+            - [Multiline String Literals](#multiline-string-literals)
+    - [HTML and CSS](#html-and-css)
+        - [The `<html>`, `<head>`, and `<body>` Elements](#the-html-head-and-body-elements)
+        - [Doctype and Encoding](#doctype-and-encoding)
+        - [Other Important `<meta>` Elements](#other-important-meta-elements)
+            - [Use the Latest Rendering Engine](#use-the-latest-rendering-engine)
+            - [Mobile Viewport](#mobile-viewport)
+        - [Optimized Google Analytics Snippet](#optimized-google-analytics-snippet)
+        - [HTML Formatting](#html-formatting)
+            - [Quotes](#quotes)
+            - [Capitalization](#capitalization)
+            - [Trailing Whitespace](#trailing-whitespace)
+            - [Enitty References](#entity-references)
+            - [Optional Elements](#optional-elements)
+            - [Optional Attributes](#optional-attributes)
+        - [Semantics](#semantics)
+        - [Seperation of Concerns](#separation-of-concerns)
+        - [ID and Class Naming](#id-and-class-naming)
+            - [Use Meaningful or Generic ID and Class Names](#use-meaningful-or-generic-id-and-class-names)
+            - [Use Names That are as Short as Possible but as Long as Necessary](#use-names-that-are-as-short-as-possible-but-as-long-as-necessary)
+        - [Selector Performance](#selector-performance)
+            - [Avoid a Universal Key Selector](#avoid-a-universal-key-selector)
+            - [Make your Rules as Specific as Possible](#make-your-rules-as-specific-as-possible)
+            - [Remove Redundant Qualifiers](#remove-redundant-qualifiers)
+        - [CSS Formatting](#css-formatting)
+            - [Shorthand Properties](#shorthand-properties)
+            - [0 and Units](#0-and-units)
+            - [Quotation Marks in URI Values](#quotation-marks-in-uri-values)
+            - [Hexidecimal Notation](#hexadecimal-notation)
+            - [Prefixes](#prefixes)
+            - [ID and Class Name Delimiters](#id-and-class-name-delimiters)
+            - [Order](#order)
+            - [Block Content Indentation](#block-content-indentation)
+            - [Semicolons](#semicolons)
+            - [Property Name Stops](#property-name-stops)
+            - [Selector and Delaration Seperation](#selector-and-declaration-separation)
+            - [Rule Seperation](#rule-separation)
+        - [Conditional Stylesheets/CSS Hacks](#conditional-stylesheetscss-hacks)
+        
+
+
 # General
 
 **BE CONSISTENT**
@@ -23,7 +99,7 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 ## Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
 
-## Helpful resources
+## Helpful Resources
 
  * [HTML5 Boilerplate](http://html5boilerplate.com/)
  * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
@@ -31,14 +107,6 @@ The unit of indentation is four spaces. Use of tabs should be avoided because (a
 
 # Javascript
 
-## Names
-In general use:
- * functionNamesLikeThis
- * variableNamesLikeThis
- * methodNamesLikeThis
- * ConstructorNamesLikeThis
- * SYMBOLIC_CONSTANTS_LIKE_THIS
- 
 ## Strings
 
 Prefer `'` over `"`
@@ -48,6 +116,14 @@ For consistency  `'` (single-quotes) are preferred to `"` (double-quotes). This 
 var msg = '<p class="message">This is some HTML<p>';
 ```
 
+## Names
+In general use:
+ * functionNamesLikeThis
+ * variableNamesLikeThis
+ * methodNamesLikeThis
+ * ConstructorNamesLikeThis
+ * SYMBOLIC_CONSTANTS_LIKE_THIS
+
 ### Constants
 Use NAMES_LIKE_THIS for constants; never use the `const` keyword.
 
@@ -56,7 +132,7 @@ var ONE_SECOND = 1000,
     ONE_MINUTE = ONE_SECOND * 60;
 ```
 
-### Private variables
+### Private Variables
 Do not use _ (underbar) as the first character of a name. It is sometimes used to indicate privacy, but it does not actually provide privacy. If privacy is important, use the forms that provide private members. Avoid conventions that demonstrate a lack of competence.
 
 
@@ -83,7 +159,7 @@ forio.utils = {};
 window['MLB'] = window['MLB'] || {};
 ```
  
-### jQuery elements
+### jQuery Elements
 Prefix jQuery elements with $ for clarity
 
 ```javascript
@@ -395,10 +471,10 @@ Blank spaces should be used in the following circumstances:
 
 ## Don't`s
  
-### Use of CoffeeScript in production.
-"I love CoffeeScript, i think CoffeeScript is a brilliant experiment.  It shows that if you take just the good parts of javascript and put a much better syntax on it, it's a really lovely programming language. I wish javascript looked a lot more like CoffeeScript.  That said, I would be careful where you use CoffeeScript.  I think it makes a lot of sense for experimentation, for prototypes, for one-offs, for hobbies...  I would not use it in production.  It's not a fully baked language, it's not a standard language, it's not fair to require anyone who might come after you..."  - Douglas Crockford
+### Use of CoffeeScript in Production
+"I love CoffeeScript, I think CoffeeScript is a brilliant experiment.  It shows that if you take just the good parts of javascript and put a much better syntax on it, it's a really lovely programming language. I wish javascript looked a lot more like CoffeeScript.  That said, I would be careful where you use CoffeeScript.  I think it makes a lot of sense for experimentation, for prototypes, for one-offs, for hobbies...  I would not use it in production.  It's not a fully baked language, it's not a standard language, it's not fair to require anyone who might come after you..."  - Douglas Crockford
 
-### Modify built-in objects or custom libraries.
+### Modification of Built-in Objects and Custom Libraries
 ```javascript
 String.prototype.toTitleCase = function () {
     // ...
@@ -433,7 +509,7 @@ The `eval` function is the most misused feature of JavaScript. Avoid it.
 
 It's a TRAP
 
-### Multiline string literals
+### Multiline String Literals
 Do not do this:
 
 ```javascript
@@ -457,43 +533,43 @@ var myString = 'A rather long string of English text, an error message ' +
 
 # HTML and CSS
 
-## The `<html>`, `<head>`, and `<body>` Tags
+## The `<html>`, `<head>`, and `<body>` Elements
 
-HTML5 doesn’t require the `<html>`, `<head>` and `<body>` tags (browsers add them if missing), but you should always use them!
+HTML5 doesn’t require the `<html>`, `<head>` and `<body>` elements (browsers add them if missing), but you should always use them!
 
-If, for example, you omit the `<body>` tag in IE, use the html5shiv and don't have any visible content (like text, images, etc.) in front of a new HTML5 element, that element with all the content from inside it will be included by IE in the `<head>` tag.
+If, for example, you omit the `<body>` element in IE, use the html5shiv and don't have any visible content (like text, images, etc.) in front of a new HTML5 element, that element with all the content from inside it will be included by IE in the `<head>` element.
 
-## Doctype and encoding
+## Doctype and Encoding
 
 Always use the HTML5 doctype `<!doctype html>` and utf-8 encoding `<meta charset="utf-8">`.
 
 The encoding should come in the first [1024 Bytes](http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
 
-## Other important `<meta>` tags
+## Other Important `<meta>` Elements
 
-### Use the latest rendering engine
+### Use the Latest Rendering Engine
 
 Versions 8 and 9 of Internet Explorer contain multiple rendering engines. So even if a site visitor is using IE8 or IE9, it’s possible that they're not using the latest rendering engine their browser contains. To fix this, use:
 
 ```html
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 ```
-The meta tag tells the IE rendering engine two things:
+The meta element tells the IE rendering engine two things:
 
 1. It should use the latest, or edge, version of the IE rendering environment
 2. If already installed, it should use the Google Chrome Frame rendering engine.
 
-This meta tag ensures that anyone browsing your site in IE is treated to the best possible user experience that their browser can offer.
+This meta element ensures that anyone browsing your site in IE is treated to the best possible user experience that their browser can offer.
 
-### Mobile viewport
+### Mobile Viewport
 
 ```html
 <meta name="viewport" content="width=device-width">
 ```
 
-There are a few different options that you can use with this meta tag. You can find out more in the [Apple developer docs](http://j.mp/mobileviewport).
+There are a few different options that you can use with this meta element. You can find out more in the [Apple developer docs](http://j.mp/mobileviewport).
 
-## Optimized Google Analytics snippet
+## Optimized Google Analytics Snippet
 
 ```html
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. -->
@@ -560,12 +636,12 @@ Use lowercase only.
 
 All code has to be lowercase: this applies to element names, attributes, attribute values (unless text/CDATA), selectors, properties, and property values (with the exception of strings).
 
-### Trailing whitespace
+### Trailing Whitespace
 
 Remove trailing white spaces.
 Trailing white spaces are unnecessary and can complicate diffs.
 
-### Entity references
+### Entity References
 
 Use entity references only where required `<`, `>`, and `&`  as well as control or "invisible" characters (like no-break spaces).
 
@@ -578,11 +654,11 @@ The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
 The currency symbol for the Euro is “€”.
 ```
 
-### Optional tags
+### Optional Elements
 
-Omitting [optional tags](http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission) can be useful for file size optimization, but be clear and consistent.
+Omitting [optional elements](http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission) can be useful for file size optimization, but be clear and consistent.
 
-### Optional attributes
+### Optional Attributes
 
 Omit optional attributes on script and stylesheets.
 
@@ -600,7 +676,7 @@ Using HTML according to its purpose is important for accessibility, reuse, and c
 <a href="recommendations/">All recommendations</a>
 ```
 
-## Separation of concerns
+## Separation of Concerns
 
 Avoid inline javascript/CSS in markup.
 
@@ -618,9 +694,9 @@ Avoid inline javascript/CSS in markup.
   my website without doing everything all over again!</center>
 ```
 
-## ID and class naming
+## ID and Class Naming
 
-### Use meaningful or generic ID and class names.
+### Use Meaningful or Generic ID and Class Names.
 Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
 
 Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
@@ -647,7 +723,7 @@ Using functional or generic names reduces the probability of unnecessary documen
 .alt {}
 ```
 
-### Use names that are as short as possible but as long as necessary
+### Use Names That Are as Short as Possible but as Long as Necessary
 
 Try to convey what an ID or class is about while being as brief as possible.
 
@@ -662,26 +738,26 @@ Using ID and class names this way contributes to acceptable levels of understand
 .author {}
 ```
 
-## Selector performance
+## Selector Performance
 
 Selectors are matched right to left.  The right most being the key selector.
 
 Avoiding inefficient key selectors that match large numbers of elements can [speed up page rendering](https://developers.google.com/speed/docs/best-practices/rendering).
 
-### Avoid a universal key selector.
+### Avoid a Universal Key Selector
 ```css
 body * {...}
 .hide-scrollbars * {...}
 ```
 Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
 
-### Make your rules as specific as possible.
-Prefer class and ID selectors over tag selectors.
+### Make Your Rules as Specific as Possible
+Prefer class and ID selectors over element selectors.
 
-### Remove redundant qualifiers.
+### Remove Redundant Qualifiers.
 These qualifiers are redundant:
- * ID selectors qualified by class and/or tag selectors
- * Class selectors qualified by tag selectors (when a class is only used for one tag, which is a good design practice anyway).
+ * ID selectors qualified by class and/or element selectors
+ * Class selectors qualified by element selectors (when a class is only used for one tag, which is a good design practice anyway).
 
 ```css
 /* Not recommended */
@@ -695,7 +771,7 @@ div.error {}
 
 ## CSS Formatting
 
-### Shorthand properties
+### Shorthand Properties
 Use shorthand properties where possible.
 CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
 
@@ -718,7 +794,7 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 
-### 0 and units
+### 0 and Units
 Do not use units after 0 values unless they are required.
 
 ```css
@@ -726,7 +802,7 @@ margin: 0;
 padding: 0;
 ```
 
-### Quotation marks in URI values
+### Quotation Marks in URI Values
 
 Omit quotation marks in URI values.
 Do not use `""`, `'` (quotation marks) with `url()`.
@@ -735,7 +811,7 @@ Do not use `""`, `'` (quotation marks) with `url()`.
 @import url(//www.google.com/css/go.css);
 ```
 
-### Hexadecimal notation
+### Hexadecimal Notation
 Use 3 character hexadecimal notation where possible.
 For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
 
@@ -759,7 +835,7 @@ Using namespaces helps preventing naming conflicts and can make maintenance easi
 #maia-note {} /* Maia */
 ```
 
-### ID and class name delimiters
+### ID and Class Name Delimiters
 Separate words in ID and class names by a hyphen.
 Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
 
@@ -793,7 +869,7 @@ text-align: center;
 text-indent: 2em;
 ```
 
-### Block content indentation
+### Block Content Indentation
 Indent all block content.
 Indent all block content, that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
 
@@ -810,7 +886,7 @@ Indent all block content, that is rules within rules as well as declarations, so
 
 Use them.
 
-### Property name stops
+### Property Name Stops
 
 Use a space after a property name’s colon.
 Always use a single space between property and value (but no space between property and colon) for consistency reasons.
@@ -827,7 +903,7 @@ h3 {
 }
 ```
 
-### Selector and declaration separation
+### Selector and Declaration Separation
 
 Separate selectors and declarations by new lines.
 Always start a new line for each selector and declaration.
@@ -847,7 +923,7 @@ h3 {
 }
 ```
 
-### Rule separation
+### Rule Separation
 
 Separate rules by new lines.
 Always put a line between rules.
@@ -863,7 +939,7 @@ body {
 }
 ```
 
-## Conditional stylesheets/CSS hacks
+## Conditional Stylesheets/CSS Hacks
 
 [Neither](http://aulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
 
