@@ -127,6 +127,7 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   │   └── api.js
 │   │   └── compiled.js
 │   ├── img
+│   │   └── ...
 │   ├── css
 │   │   └── style.css
 ├── src
@@ -141,6 +142,7 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   └── footer.less
 │   │   └── style.less
 │   ├── templates
+│   │   └── ...
 │   ├── js
 │   │   ├── models
 │   │   │   ├── user.js
