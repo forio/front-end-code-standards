@@ -12,6 +12,7 @@ This document was inspired by a combination of works:
 * 1.1 [Filenames](https://github.com/dwick/forio-style-guide#11-filenames)
 * 1.2 [Indentation](https://github.com/dwick/forio-style-guide#12-indentation)
 * 1.3 [Helpful Resources](https://github.com/dwick/forio-style-guide#13-helpful-resources)
+
 ### 2.0. [Javascript](https://github.com/dwick/forio-style-guide#20-javascript)
 * 2.1 [Strings](https://github.com/dwick/forio-style-guide#21-strings)
 * 2.2.0 [Names](https://github.com/dwick/forio-style-guide#220-names)
@@ -44,6 +45,7 @@ This document was inspired by a combination of works:
     * 2.9.4 [`eval` is Evil](https://github.com/dwick/forio-style-guide#294-eval-is-evil)
     * 2.9.5 [Internet Explorer's Conditional Comments](https://github.com/dwick/forio-style-guide#295-internet-explorers-conditional-comments)
     * 2.9.6 [Multiline String Literals](https://github.com/dwick/forio-style-guide#296-multiline-string-literals)
+    
 ### 3.0 [HTML and CSS](https://github.com/dwick/forio-style-guide#30-html-and-css)
 * 3.1 [The `<html>`, `<head>`, and `<body>` Elements](https://github.com/dwick/forio-style-guide#31-the-html-head-and-body-elements)
 * 3.2 [Doctype and Encoding](https://github.com/dwick/forio-style-guide#32-doctype-and-encoding)
