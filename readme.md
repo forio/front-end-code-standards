@@ -371,6 +371,7 @@ Blank spaces should be used in the following circumstances:
     return val ? foo() : bar();
     ```
  * Use array and object literals
+ * Commit often
 
 **BE CONSISTENT**.
 
@@ -393,9 +394,9 @@ String.prototype.toTitleCase = function () {
 
 Modifying 3rd party libraries should be a last resort and proper documentation should be made if done.
 
-Rename the file to make it clear: highcharts.v2.1.custom.js
-Insert comments on change lines.
-Make separate commits for each change.
+ * Rename the file to make it clear: highcharts.v2.1.custom.js
+ * Insert comments on change lines.
+ * Make separate commits for each change.
 
 ### Confusing Pluses and Minuses
 
@@ -416,6 +417,8 @@ The `eval` function is the most misused feature of JavaScript. Avoid it.
 `eval` has aliases. Do not use the `Function` constructor. Do not pass strings to `setTimeout` or `setInterval`.
 
 ### Internet Explorer's Conditional Comments
+
+It's a TRAP
 
 ### Multiline string literals
 Do not do this:
