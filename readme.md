@@ -413,7 +413,7 @@ for (initialization; condition; update) {
 }
 
 for (variable in object) {
-    if (filter) {
+    if (object.hasOwnProperty(variable)) {
         statements
     } 
 }
