@@ -133,14 +133,14 @@ var ONE_SECOND = 1000,
     ONE_MINUTE = ONE_SECOND * 60;
 ```
 
-### Private Variables
+### 2.2.2 Private Variables
 Do not use _ (underbar) as the first character of a name. It is sometimes used to indicate privacy, but it does not actually provide privacy. If privacy is important, use the forms that provide private members. Avoid conventions that demonstrate a lack of competence.
 
 
-### Constructors
+### 2.2.3 Constructors
 Constructor functions which must be used with the new prefix should start with a capital letter. JavaScript issues neither a compile-time warning nor a run-time warning if a required new is omitted. Bad things can happen if new is not used, so the capitalization convention is the only defense we have.
 
-### Namespaces
+### 2.2.4 Namespaces
 JavaScript has no inherent packaging or namespacing support.
 
 Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we've adopted conventions to prevent collisions.
@@ -160,14 +160,14 @@ forio.utils = {};
 window['MLB'] = window['MLB'] || {};
 ```
  
-### jQuery Elements
+### 2.2.5 jQuery Elements
 Prefix jQuery elements with $ for clarity
 
 ```javascript
 var $el = $(this);
 ```
 
-## Comments
+## 2.3 Comments
 
 Be generous with comments. It is useful to leave information that will be read at a later time by people (possibly yourself) who will need to understand what you have done. The comments should be well-written and clear, just like the code they are annotating. An occasional nugget of humor might be appreciated. Frustrations and resentments will not.
 
@@ -183,7 +183,7 @@ Generally use line comments. Save block comments for formal documentation and fo
 
 Use [JSDoc](http://code.google.com/p/jsdoc-toolkit/) for formal documentation.
 
-## Variable Declarations
+## 2.4 Variable Declarations
 
 All variables should be declared before used. JavaScript does not require this, but doing so makes the program easier to read and makes it easier to detect undeclared variables that may become implied globals. Implied global variables should never be used.
 
@@ -209,7 +209,7 @@ var doStuff = function (options) {
 
 Use of global variables should be minimized. **Implied global variables should never be used**.
 
-## Function Declarations
+## 2.5 Function Declarations
 
 All functions should be declared before they are used. Inner functions should follow the var statement. This helps make it clear what variables are included in its scope.
 
@@ -303,15 +303,15 @@ var collection = (function () {
 }());
 ```
 
-## Statements
+## 2.6.0 Statements
 
-###Simple Statements
+### 2.6.1 Simple Statements
 
 Each line should contain at most one statement. Put a `;` (semicolon) at the end of every simple statement. Note that an assignment statement which is assigning a function literal or object literal is still an assignment statement and must end with a semicolon.
 
 JavaScript allows any expression to be used as a statement. This can mask some errors, particularly in the presence of semicolon insertion. The only expressions that should be used as statements are assignments and invocations.
 
-###Compound Statements
+### 2.6.2 Compound Statements
 
 Compound statements are statements that contain lists of statements enclosed in { } (curly braces).
 
@@ -320,11 +320,11 @@ Compound statements are statements that contain lists of statements enclosed in 
  * The `}` (right curly brace) should begin a line and be indented to align with the beginning of the line containing the matching `{` (left curly brace).
  * Braces should be used around all statements, even single statements, when they are part of a control structure, such as an if or for statement. This makes it easier to add statements without accidentally introducing bugs.
  
-### `return` Statement
+### 2.6.3 `return` Statement
 
 A return statement with a value should not use `( )` (parentheses) around the value. The return value expression must start on the same line as the return keyword in order to avoid semicolon insertion.
 
-### `if` Statement
+### 2.6.4 `if` Statement
 
 The if class of statements should have the following form:
 
@@ -348,7 +348,7 @@ if (condition) {
 }
 ```
 
-### `for` Statement
+### 2.6.5 `for` Statement
 
 A for class of statements should have the following form:
 
@@ -376,7 +376,7 @@ for (variable in object) {
 }
 ```
 
-### `while` Statement
+### 2.6.6 `while` Statement
 
 A while statement should have the following form:
 
@@ -386,7 +386,7 @@ while (condition) {
 }
 ```
 
-### `do` Statement
+### 2.6.7 `do` Statement
 
 A do statement should have the following form:
 
@@ -398,7 +398,7 @@ do {
 
 Unlike the other compound statements, the do statement always ends with a `;` (semicolon).
 
-### `switch` Statement
+### 2.6.8 `switch` Statement
 
 A switch statement should have the following form:
 
@@ -415,7 +415,7 @@ Each case is aligned with the switch. This avoids over-indentation.
 
 Each group of statements (except the default) should end with `break`, `return`, or `throw`. Do not fall through.
 
-### `try` Statement
+### 2.6.9 `try` Statement
 
 The try class of statements should have the following form:
 
@@ -435,15 +435,15 @@ try {
 }
 ```
 
-### `continue` Statement
+### 2.6.10 `continue` Statement
 
 Avoid use of the `continue` statement. It tends to obscure the control flow of the function.
 
-### `with` Statement
+### 2.6.11 `with` Statement
 
 The `with` statement [should not be used](http://yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
 
-## Whitespace
+## 2.7 Whitespace
 
 Blank lines improve readability by setting off sections of code that are logically related.
 
@@ -459,7 +459,7 @@ Blank spaces should be used in the following circumstances:
  * Each `;` (semicolon) in the control part of a for statement should be followed with a space.
  * Whitespace should follow every `,` (comma).
 
-## Do`s
+## 2.8 Do`s
  * Parentheses - Only where required.
  * Use of JS compilers such as the [Closure Compiler](http://code.google.com/closure/compiler/) or [YUI Compressor](http://developer.yahoo.com/yui/compressor/) is encouraged.
  * Use ternary expressions in `return` statements.
@@ -470,12 +470,12 @@ Blank spaces should be used in the following circumstances:
  * Commit often
  * Use JSHint in your editor. [TextMate Bundle](http://fgnass.posterous.com/jslint-in-textmate)
 
-## Don't`s
+## 2.9.0 Don't`s
  
-### Use of CoffeeScript in Production
+### 2.9.1 Use of CoffeeScript in Production
 "I love CoffeeScript, I think CoffeeScript is a brilliant experiment.  It shows that if you take just the good parts of javascript and put a much better syntax on it, it's a really lovely programming language. I wish javascript looked a lot more like CoffeeScript.  That said, I would be careful where you use CoffeeScript.  I think it makes a lot of sense for experimentation, for prototypes, for one-offs, for hobbies...  I would not use it in production.  It's not a fully baked language, it's not a standard language, it's not fair to require anyone who might come after you..."  - Douglas Crockford
 
-### Modification of Built-in Objects and Custom Libraries
+### 2.9.2 Modification of Built-in Objects and Custom Libraries
 ```javascript
 String.prototype.toTitleCase = function () {
     // ...
@@ -488,7 +488,7 @@ Modifying 3rd party libraries should be a last resort and proper documentation s
  * Insert comments on change lines.
  * Make separate commits for each change.
 
-### Confusing Pluses and Minuses
+### 2.9.3 Confusing Pluses and Minuses
 
 Be careful to not follow a `+` with `+` or `++`. This pattern can be confusing. Insert parens between them to make your intention clear.
 ```javascript
@@ -500,17 +500,17 @@ total = subtotal + (+myInput.value);
 ```
 so that the `+ +` is not misread as `++`.
 
-### `eval` is Evil
+### 2.9.4 `eval` is Evil
 
 The `eval` function is the most misused feature of JavaScript. Avoid it.
 
 `eval` has aliases. Do not use the `Function` constructor. Do not pass strings to `setTimeout` or `setInterval`.
 
-### Internet Explorer's Conditional Comments
+### 2.9.5 Internet Explorer's Conditional Comments
 
 It's a TRAP
 
-### Multiline String Literals
+### 2.9.6 Multiline String Literals
 Do not do this:
 
 ```javascript
@@ -532,23 +532,23 @@ var myString = 'A rather long string of English text, an error message ' +
     'just gravy.  Have a nice day.';
 ```
 
-# HTML and CSS
+# 3.0 HTML and CSS
 
-## The `<html>`, `<head>`, and `<body>` Elements
+## 3.1 The `<html>`, `<head>`, and `<body>` Elements
 
 HTML5 doesn’t require the `<html>`, `<head>` and `<body>` elements (browsers add them if missing), but you should always use them!
 
 If, for example, you omit the `<body>` element in IE, use the html5shiv and don't have any visible content (like text, images, etc.) in front of a new HTML5 element, that element with all the content from inside it will be included by IE in the `<head>` element.
 
-## Doctype and Encoding
+## 3.2 Doctype and Encoding
 
 Always use the HTML5 doctype `<!doctype html>` and utf-8 encoding `<meta charset="utf-8">`.
 
 The encoding should come in the first [1024 Bytes](http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset)
 
-## Other Important `<meta>` Elements
+## 3.3.0 Other Important `<meta>` Elements
 
-### Use the Latest Rendering Engine
+### 3.3.1 Use the Latest Rendering Engine
 
 Versions 8 and 9 of Internet Explorer contain multiple rendering engines. So even if a site visitor is using IE8 or IE9, it’s possible that they're not using the latest rendering engine their browser contains. To fix this, use:
 
@@ -562,7 +562,7 @@ The meta element tells the IE rendering engine two things:
 
 This meta element ensures that anyone browsing your site in IE is treated to the best possible user experience that their browser can offer.
 
-### Mobile Viewport
+### 3.3.2 Mobile Viewport
 
 ```html
 <meta name="viewport" content="width=device-width">
@@ -570,7 +570,7 @@ This meta element ensures that anyone browsing your site in IE is treated to the
 
 There are a few different options that you can use with this meta element. You can find out more in the [Apple developer docs](http://j.mp/mobileviewport).
 
-## Optimized Google Analytics Snippet
+## 3.4 Optimized Google Analytics Snippet
 
 ```html
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. -->
@@ -584,7 +584,7 @@ There are a few different options that you can use with this meta element. You c
 
 [How it works](http://mathiasbynens.be/notes/async-analytics-snippet)
 
-## HTML Formatting
+## 3.5.0 HTML Formatting
 
 Use a new line for every block, list, or table element, and indent every such child element.
 Independent of the styling of an element (as CSS allows elements to assume a different role per display property), put every block, list, or table element on a new line.
@@ -617,7 +617,7 @@ Also, indent them if they are child elements of a block, list, or table element.
 </table>
 ```
 
-### Quotes
+### 3.5.1 Quotes
 
 In HTML, we use `"` (double quotes) around attribute values, like this:
 
@@ -631,18 +631,18 @@ This way, we can use consistent quotes when writing HTML inside of JS:
 alert('<a href="foo">bar</a>');
 ```
 
-### Capitalization
+### 3.5.2 Capitalization
 
 Use lowercase only.
 
 All code has to be lowercase: this applies to element names, attributes, attribute values (unless text/CDATA), selectors, properties, and property values (with the exception of strings).
 
-### Trailing Whitespace
+### 3.5.3 Trailing Whitespace
 
 Remove trailing white spaces.
 Trailing white spaces are unnecessary and can complicate diffs.
 
-### Entity References
+### 3.5.4 Entity References
 
 Use entity references only where required `<`, `>`, and `&`  as well as control or "invisible" characters (like no-break spaces).
 
@@ -655,15 +655,15 @@ The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
 The currency symbol for the Euro is “€”.
 ```
 
-### Optional Elements
+### 3.5.5 Optional Elements
 
 Omitting [optional elements](http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#syntax-tag-omission) can be useful for file size optimization, but be clear and consistent.
 
-### Optional Attributes
+### 3.5.6 Optional Attributes
 
 Omit optional attributes on script and stylesheets.
 
-## Semantics
+## 3.6 Semantics
 
 Use HTML according to its purpose.
 Use elements for what they have been created for. For example, use `<header>` elements for headings, `<p>` elements for paragraphs, `<a>` elements for anchors, etc.
@@ -677,7 +677,7 @@ Using HTML according to its purpose is important for accessibility, reuse, and c
 <a href="recommendations/">All recommendations</a>
 ```
 
-## Separation of Concerns
+## 3.7 Separation of Concerns
 
 Avoid inline javascript/CSS in markup.
 
@@ -695,9 +695,9 @@ Avoid inline javascript/CSS in markup.
   my website without doing everything all over again!</center>
 ```
 
-## ID and Class Naming
+## 3.8.0 ID and Class Naming
 
-### Use Meaningful or Generic ID and Class Names.
+### 3.8.1 Use Meaningful or Generic ID and Class Names.
 Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
 
 Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
@@ -724,7 +724,7 @@ Using functional or generic names reduces the probability of unnecessary documen
 .alt {}
 ```
 
-### Use Names That Are as Short as Possible but as Long as Necessary
+### 3.8.2 Use Names That Are as Short as Possible but as Long as Necessary
 
 Try to convey what an ID or class is about while being as brief as possible.
 
@@ -739,23 +739,23 @@ Using ID and class names this way contributes to acceptable levels of understand
 .author {}
 ```
 
-## Selector Performance
+## 3.9.0 Selector Performance
 
 Selectors are matched right to left.  The right most being the key selector.
 
 Avoiding inefficient key selectors that match large numbers of elements can [speed up page rendering](https://developers.google.com/speed/docs/best-practices/rendering).
 
-### Avoid a Universal Key Selector
+### 3.9.1 Avoid a Universal Key Selector
 ```css
 body * {...}
 .hide-scrollbars * {...}
 ```
 Allow elements to inherit from ancestors, or use a class to apply a style to multiple elements.
 
-### Make Your Rules as Specific as Possible
+### 3.9.2 Make Your Rules as Specific as Possible
 Prefer class and ID selectors over element selectors.
 
-### Remove Redundant Qualifiers.
+### 3.9.3 Remove Redundant Qualifiers.
 These qualifiers are redundant:
  * ID selectors qualified by class and/or element selectors
  * Class selectors qualified by element selectors (when a class is only used for one tag, which is a good design practice anyway).
@@ -770,9 +770,9 @@ div.error {}
 .error {}
 ```
 
-## CSS Formatting
+## 3.10.0 CSS Formatting
 
-### Shorthand Properties
+### 3.10.1 Shorthand Properties
 Use shorthand properties where possible.
 CSS offers a variety of shorthand properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
 
@@ -795,7 +795,7 @@ font: 100%/1.6 palatino, georgia, serif;
 padding: 0 1em 2em;
 ```
 
-### 0 and Units
+### 3.10.2 0 and Units
 Do not use units after 0 values unless they are required.
 
 ```css
@@ -803,7 +803,7 @@ margin: 0;
 padding: 0;
 ```
 
-### Quotation Marks in URI Values
+### 3.10.3 Quotation Marks in URI Values
 
 Omit quotation marks in URI values.
 Do not use `""`, `'` (quotation marks) with `url()`.
@@ -812,7 +812,7 @@ Do not use `""`, `'` (quotation marks) with `url()`.
 @import url(//www.google.com/css/go.css);
 ```
 
-### Hexadecimal Notation
+### 3.10.4 Hexadecimal Notation
 Use 3 character hexadecimal notation where possible.
 For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
 
@@ -824,7 +824,7 @@ color: #eebbcc;
 color: #ebc;
 ````
 
-### Prefixes
+### 3.10.5 Prefixes
 
 Prefix selectors with an application-specific prefix (optional).
 In large projects as well as for code that gets embedded in other projects or on external sites use prefixes (as namespaces) for ID and class names. Use short, unique identifiers followed by a dash.
@@ -836,7 +836,7 @@ Using namespaces helps preventing naming conflicts and can make maintenance easi
 #maia-note {} /* Maia */
 ```
 
-### ID and Class Name Delimiters
+### 3.10.6 ID and Class Name Delimiters
 Separate words in ID and class names by a hyphen.
 Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
 
@@ -852,7 +852,7 @@ Do not concatenate words and abbreviations in selectors by any characters (inclu
 .ads-sample {}
 ```
 
-### Order
+### 3.10.7 Order
 
 Alphabetize declarations.
 Put declarations in alphabetical order in order to achieve consistent code in a way that is easy to remember and maintain.
@@ -870,7 +870,7 @@ text-align: center;
 text-indent: 2em;
 ```
 
-### Block Content Indentation
+### 3.10.8 Block Content Indentation
 Indent all block content.
 Indent all block content, that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
 
@@ -883,11 +883,11 @@ Indent all block content, that is rules within rules as well as declarations, so
 }
 ```
 
-### Semicolons
+### 3.10.9 Semicolons
 
 Use them.
 
-### Property Name Stops
+### 3.10.10 Property Name Stops
 
 Use a space after a property name’s colon.
 Always use a single space between property and value (but no space between property and colon) for consistency reasons.
@@ -904,7 +904,7 @@ h3 {
 }
 ```
 
-### Selector and Declaration Separation
+### 3.10.11 Selector and Declaration Separation
 
 Separate selectors and declarations by new lines.
 Always start a new line for each selector and declaration.
@@ -924,7 +924,7 @@ h3 {
 }
 ```
 
-### Rule Separation
+### 3.10.12 Rule Separation
 
 Separate rules by new lines.
 Always put a line between rules.
@@ -940,7 +940,7 @@ body {
 }
 ```
 
-## Conditional Stylesheets/CSS Hacks
+## 3.11 Conditional Stylesheets/CSS Hacks
 
 [Neither](http://aulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
 
