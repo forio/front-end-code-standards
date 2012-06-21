@@ -37,6 +37,7 @@ This document was inspired by a combination of works:
     * 2.6.9 [`try` Statement](https://github.com/dwick/forio-style-guide#269-try-statement)
     * 2.6.10 [`continue` Statement](https://github.com/dwick/forio-style-guide#2610-continue-statement)
     * 2.6.11 [`with` Statement](https://github.com/dwick/forio-style-guide#2611-with-statement)
+    * 2.6.12 [Testing for Equality or Inequality](https://github.com/dwick/forio-style-guide#2612-testing-for-equality-or-inequality)
 * 2.7 [Whitespace](https://github.com/dwick/forio-style-guide#27-whitespace)
 * 2.8 [Do`s](https://github.com/dwick/forio-style-guide#28-dos)
 * 2.9.0 [Don't`s](https://github.com/dwick/forio-style-guide#290-donts)
@@ -497,6 +498,31 @@ Avoid use of the `continue` statement. It tends to obscure the control flow of t
 ### 2.6.11 `with` Statement
 
 The `with` statement [should not be used](http://yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/).
+
+### 2.6.12 Testing for Equality or Inequality
+
+JavaScript has two sets of equality operators: `===` and `!==`, and their evil twins `==` and `!=`. The good ones work the way you would expect. If the two operands are of the same type and have the same value, then === produces true and !== produces false. The evil twins do the right thing when the operands are of the same type, but if they are of different types, they attempt to coerce the values. the rules by which they do that are complicated and unmemorable. These are some of the interesting cases:
+
+```javascript
+'' == '0'           // false
+0 == ''             // true
+0 == '0'            // true
+
+false == 'false'    // false
+false == '0'        // true
+
+false == undefined  // false
+false == null       // false
+null == undefined   // true
+
+' \t\r\n ' == 0     // true
+```
+
+The lack of transitivity is alarming. My advice is to never use the evil twins. 
+
+**Instead, always use `=== and !==`.**
+
+All of the comparisons just shown produce false with the `===` operator.
 
 ## 2.7 Whitespace
 
