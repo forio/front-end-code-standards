@@ -589,6 +589,7 @@ The `eval` function is the most misused feature of JavaScript. Avoid it.
 
 ### 2.9.5 Internet Explorer's Conditional Comments
 
+![Admiral Ackbar does not use IE conditional comments](../img/Ackbar.jpg)
 It's a TRAP
 
 ### 2.9.6 Multiline String Literals
