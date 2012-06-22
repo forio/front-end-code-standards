@@ -557,6 +557,8 @@ Blank spaces should be used in the following circumstances:
 
 > "I love CoffeeScript, I think CoffeeScript is a brilliant experiment.  It shows that if you take just the good parts of javascript and put a much better syntax on it, it's a really lovely programming language. I wish javascript looked a lot more like CoffeeScript.  That said, I would be careful where you use CoffeeScript.  I think it makes a lot of sense for experimentation, for prototypes, for one-offs, for hobbies...  I would not use it in production.  It's not a fully baked language, it's not a standard language, it's not fair to require anyone who might come after you..." - Douglas Crockford
 
+> "I don't always use CoffeeScript, but when I do, I stay the hell AWAY from production." - The Most Interesting Man in the World
+
 ### 2.9.2 Modification of Built-in Objects and Custom Libraries
 ```javascript
 String.prototype.toTitleCase = function () {
