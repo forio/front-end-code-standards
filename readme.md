@@ -540,7 +540,7 @@ Blank spaces should be used in the following circumstances:
  * Each `;` (semicolon) in the control part of a for statement should be followed with a space.
  * Whitespace should follow every `,` (comma).
 
-## 2.8 Do`s
+## 2.8 Do's
  * Parentheses - Only where required.
  * Use of JS compilers such as the [Closure Compiler](http://code.google.com/closure/compiler/) or [YUI Compressor](http://developer.yahoo.com/yui/compressor/) is encouraged.
  * Use ternary expressions in `return` statements.
@@ -551,7 +551,7 @@ Blank spaces should be used in the following circumstances:
  * Commit often
  * Use JSHint in your editor. [TextMate Bundle](http://fgnass.posterous.com/jslint-in-textmate)
 
-## 2.9.0 Don't`s
+## 2.9.0 Don'ts
  
 ### 2.9.1 Use of CoffeeScript in Production
 
