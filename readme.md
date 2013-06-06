@@ -1051,7 +1051,7 @@ body {
 
 ## 3.11 Conditional Stylesheets/CSS Hacks
 
-[Neither](http://aulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
+[Neither](http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/)
 
 ```html
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
