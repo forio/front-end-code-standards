@@ -282,8 +282,8 @@ In general use:
 Use NAMES_LIKE_THIS for constants; never use the `const` keyword.
 
 ```javascript
-var ONE_SECOND = 1000,
-    ONE_MINUTE = ONE_SECOND * 60;
+var ONE_SECOND = 1000;
+var ONE_MINUTE = ONE_SECOND * 60;
 ```
 
 ### 2.2.2 Private Variables
@@ -345,18 +345,19 @@ The `var` statements should be the first statements in the function body.
 It is preferred that each variable be given its own line and comment. They should be listed in alphabetical order.
 
 ```javascript
-var currentEntry, // currently selected table entry
-    level,        // indentation level
-    size;         // size of table
+var currentEntry; // currently selected table entry
+var level;        // indentation level
+var size;         // size of table
 ```
+
 JavaScript does not have block scope, so defining variables in blocks can confuse programmers who are experienced with other C family languages. Define all variables at the top of the function.  The assignment of nullable parameters may proceed variable definitions.
 
 ```javascript
 var doStuff = function (options) {
     options || (options = {});
     
-    var a,
-        b;
+    var a;
+    var b;
 };
 ```
 
@@ -386,9 +387,9 @@ This convention works well with JavaScript because in JavaScript, functions and 
 function getElementsByClassName(className) {
     var results = [];
     walkTheDOM(document.body, function (node) {
-        var a,                  // array of class names
-            c = node.className, // the node's classname
-            i;                  // loop counter
+        var a;                  // array of class names
+        var c = node.className; // the node's classname
+        var i;                  // loop counter
 
         // If the node has a class name, then split it into a list of simple names.
         // If any of them match the requested name, then append the node to the set of results.
@@ -428,7 +429,8 @@ When a function is to be invoked immediately, the entire invocation expression s
 
 ```javascript
 var collection = (function () {
-    var keys = [], values = [];
+    var keys = [];
+    var values = [];
 
     return {
         get: function (key) {
