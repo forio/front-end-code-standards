@@ -218,6 +218,7 @@ Substructures of views, models, etc. should exist inside a folder named after th
 Example:
 Index view with 2 sub-views, user-details and user-row.
 
+File structure:
 ```
 src/client/scripts/users
 ├── views
@@ -225,6 +226,31 @@ src/client/scripts/users
 │   └── index
 │   │   ├── user-details-view.js
 │   │   └── user-row-view.js
+```
+
+index-view.js:
+```
+'use strict';
+
+// npm module
+var View = require('view');
+// sub-views
+var UserDetails = require('./index/user-details-view');
+var UserRow = require('./index/user-row-view');
+
+module.exports = View.extend({
+   render: function () {
+      var selected = this.collection.getSelected();
+
+      this.collection.each(function (model) {
+         this.renderChild(new UserRow({ model: model }));
+      }, this);
+      
+      if (selected) {
+         this.renderChild(new UserDetails({ model: selected }));
+      }
+   }
+});
 ```
 
 
