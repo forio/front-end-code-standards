@@ -110,8 +110,6 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 
 ## 1.3 Project Structure
 ```
-├── package.json
-├── Gruntfile.js
 ├── grunt
 │   ├── uglify.js
 │   └── watch.js
@@ -156,9 +154,11 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   ├── app
 │   │   │   │   ├── header.less
 │   │   │   │   ├── ...
-│   │   │   │   └── footer.less
+│   │   │   │   ├── footer.less
 │   │   │   │   └── app.less
 │   │   │   └── style.less
+│   │   ├── .jshintrc
+│   │   └── favicon.ico
 │   ├── server
 │   │   ├── lib
 │   │   │   ├── extensions
@@ -178,15 +178,23 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   └── ...
 │   │   └── home
 │   │   │   └── ...
-│   │   └── index.js
-│   ├── shared
-│   │   ├── models
-│   │   │   ├── user.js
-│   │   │   └── run.js
-│   │   └── collections
-│   │   │   ├── users.js
-│   │   │   └── runs.js
+│   │   ├── index.js
+│   │   └── .jshintrc
+│   └── shared
+│       ├── models
+│       │   ├── user.js
+│       │   └── run.js
+│       └── collections
+│           ├── users.js
+│           └── runs.js
+├── .gitignore
+├── .jscs.json
+├── .jshintrc
+├── package.json
+├── Gruntfile.js
+└── README.md
 ```
+
 
 
 ## 1.4 Indentation
