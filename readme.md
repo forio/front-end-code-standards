@@ -113,80 +113,81 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 ├── package.json
 ├── Gruntfile.js
 ├── grunt
-|   ├── uglify.js
-|   └── watch.js
+│   ├── uglify.js
+│   └── watch.js
 ├── src
-|   ├── client
-|   │   ├── scripts
-|   │   │   ├── vendor
-|   │   │   │   ├── jquery
-|   │   │   │   │   ├── jquery.min.js
-|   │   │   │   │   └── jquery.js
-|   │   │   │   ├── backbone
-|   │   │   │   │   ├── backbone.min.js
-|   │   │   │   │   └── backbone.js
-|   │   │   │   └── underscore
-|   │   │   │   │   ├── underscore.min.js
-|   │   │   │   │   └── underscore.js
-|   │   │   │   └── forio
-|   │   │   │   │   ├── api.min.js
-|   │   │   │   │   └── api.js
-|   │   │   ├── common
-|   │   │   |   ├── routers
-|   │   │   |   |   ├── router.js
-|   │   │   |   ├── views
-|   │   │   |   |   └── view.js
-|   │   │   |   ├── templates
-|   │   │   ├── users
-|   │   │   |   ├── routers
-|   │   │   |   ├── views
-|   │   │   |   |   ├── index.js
-|   │   │   |   |   └── index
-|   │   │   |   |   |   ├── user-details-view.js
-|   │   │   |   |   |   └── user-row-view.js
-|   │   │   |   └── templates
-|   │   │   └── home
-|   │   │   |   └── ...
-|   │   ├── img
-|   │   │   └── ...
-|   │   ├── styles
-|   |   |   ├── vendor
-|   |   |   |   ├── bootstrap
-|   |   |   |   └── symbol-set
-|   |   |   ├── app
-|   |   |   |   ├── header.less
-|   |   |   |   ├── ...
-|   │   │   │   └── footer.less
-|   |   |   |   └── app.less
-|   │   │   └── style.less
-|   ├── server
-|   │   ├── lib
-|   │   |   ├── extensions
-|   │   |   ├── middleware
-|   │   |   └── mvc
-|   │   ├── common
-|   │   |   ├── views
-|   │   |   |   └── layouts
-|   │   |   |   |   └── default.hbs
-|   │   |   └── ...
-|   │   ├── users
-|   │   |   ├── controllers
-|   │   |   |   └── home-controller.js
-|   │   |   ├── views
-|   │   |   |   ├── help.hbs
-|   │   |   |   └── index.hbs
-|   │   |   └── ...
-|   │   └── home
-|   │   |   └── ...
-|   |   └── index.js
-|   ├── shared
-|   │   ├── models
-|   │   │   ├── user.js
-|   │   │   └── run.js
-|   │   └── collections
-|   │       ├── users.js
-|   │       └── runs.js
+│   ├── client
+│   │   ├── scripts
+│   │   │   ├── vendor
+│   │   │   │   ├── jquery
+│   │   │   │   │   ├── jquery.min.js
+│   │   │   │   │   └── jquery.js
+│   │   │   │   ├── backbone
+│   │   │   │   │   ├── backbone.min.js
+│   │   │   │   │   └── backbone.js
+│   │   │   │   └── underscore
+│   │   │   │   │   ├── underscore.min.js
+│   │   │   │   │   └── underscore.js
+│   │   │   │   └── forio
+│   │   │   │   │   ├── api.min.js
+│   │   │   │   │   └── api.js
+│   │   │   ├── common
+│   │   │   │   ├── routers
+│   │   │   │   │   ├── router.js
+│   │   │   │   ├── views
+│   │   │   │   │   └── view.js
+│   │   │   │   ├── templates
+│   │   │   ├── users
+│   │   │   │   ├── routers
+│   │   │   │   ├── views
+│   │   │   │   │   ├── index.js
+│   │   │   │   │   └── index
+│   │   │   │   │   │   ├── user-details-view.js
+│   │   │   │   │   │   └── user-row-view.js
+│   │   │   │   └── templates
+│   │   │   └── home
+│   │   │   │   └── ...
+│   │   ├── img
+│   │   │   └── ...
+│   │   ├── styles
+│   │   │   ├── vendor
+│   │   │   │   ├── bootstrap
+│   │   │   │   └── symbol-set
+│   │   │   ├── app
+│   │   │   │   ├── header.less
+│   │   │   │   ├── ...
+│   │   │   │   └── footer.less
+│   │   │   │   └── app.less
+│   │   │   └── style.less
+│   ├── server
+│   │   ├── lib
+│   │   │   ├── extensions
+│   │   │   ├── middleware
+│   │   │   └── mvc
+│   │   ├── common
+│   │   │   ├── views
+│   │   │   │   └── layouts
+│   │   │   │   │   └── default.hbs
+│   │   │   └── ...
+│   │   ├── users
+│   │   │   ├── controllers
+│   │   │   │   └── home-controller.js
+│   │   │   ├── views
+│   │   │   │   ├── help.hbs
+│   │   │   │   └── index.hbs
+│   │   │   └── ...
+│   │   └── home
+│   │   │   └── ...
+│   │   └── index.js
+│   ├── shared
+│   │   ├── models
+│   │   │   ├── user.js
+│   │   │   └── run.js
+│   │   └── collections
+│   │   │   ├── users.js
+│   │   │   └── runs.js
 ```
+
 
 ## 1.4 Indentation
 The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
