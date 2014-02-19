@@ -10,8 +10,10 @@ This document was inspired by a combination of works:
 
 ### 1.0 [General](https://github.com/forio/front-end-code-standards#10-general)
 * 1.1 [Helpful Resources](https://github.com/forio/front-end-code-standards#11-helpful-resources)
-* 1.2 [Filenames](https://github.com/forio/front-end-code-standards#12-filenames)
-* 1.3 [Project Structure](https://github.com/forio/front-end-code-standards#13-project-structure)
+* 1.2.0 [Filenames](https://github.com/forio/front-end-code-standards#120-filenames)
+    * 1.2.1 [Avoid duplicate filenames](https://github.com/forio/front-end-code-standards#121-avoid-duplicate-filenames)
+* 1.3.0 [Project Structure](https://github.com/forio/front-end-code-standards#130-project-structure)
+    * 1.3.1 [Composed structures](https://github.com/forio/front-end-code-standards#131-composed-structure)
 * 1.4 [Indentation](https://github.com/forio/front-end-code-standards#14-indentation)
 
 ### 2.0 [Javascript](https://github.com/forio/front-end-code-standards#20-javascript)
@@ -102,13 +104,28 @@ The point of having style guidelines is to have a common vocabulary of coding so
  * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
  * [Underscore.js](http://underscorejs.org/)
 
-## 1.2 Filenames
+## 1.2.0 Filenames
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should contain no punctuation except for - or _ (prefer - to _).
 
 Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
 
-## 1.3 Project Structure
+### 1.2.1 Avoid duplicate filenames
+
+Appending the type of an object to the filename can help prevent duplicates and facilitate easier lookups within the devtools.
+
+Models, views, controllers, routers, and collections should always be suffixed with their type.
+
+Example:
+```
+user-model.js
+users-collection.js
+users-controller.js
+users-view.js
+users-router.js
+```
+
+## 1.3.0 Project Structure
 ```
 ├── grunt
 │   ├── uglify.js
@@ -138,7 +155,7 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 │   │   │   ├── users
 │   │   │   │   ├── routers
 │   │   │   │   ├── views
-│   │   │   │   │   ├── index.js
+│   │   │   │   │   ├── index-view.js
 │   │   │   │   │   └── index
 │   │   │   │   │   │   ├── user-details-view.js
 │   │   │   │   │   │   └── user-row-view.js
@@ -195,6 +212,20 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 └── README.md
 ```
 
+### 1.3.1 Composed structures
+Substructures of views, models, etc. should exist inside a folder named after their parent.
+
+Example:
+Index view with 2 sub-views, user-details and user-row.
+
+```
+src/client/scripts/users
+├── views
+│   ├── index-view.js
+│   └── index
+│   │   ├── user-details-view.js
+│   │   └── user-row-view.js
+```
 
 
 ## 1.4 Indentation
