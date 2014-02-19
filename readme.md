@@ -110,51 +110,83 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 
 ## 1.3 Project Structure
 ```
-├── index.html
-├── public
-│   ├── js
-│   │   ├── vendor
-│   │   │   ├── jquery
-│   │   │   │   ├── jquery.min.js
-│   │   │   │   └── jquery.js
-│   │   │   ├── backbone
-│   │   │   │   ├── backbone.min.js
-│   │   │   │   └── backbone.js
-│   │   │   └── underscore
-│   │   │   │   ├── underscore.min.js
-│   │   │   │   └── underscore.js
-│   │   │   └── forio
-│   │   │   │   ├── api.min.js
-│   │   │   │   └── api.js
-│   │   └── compiled.js
-│   ├── img
-│   │   └── ...
-│   ├── css
-│   │   └── style.css
+├── package.json
+├── Gruntfile.js
+├── grunt
+|   ├── uglify.js
+|   └── watch.js
 ├── src
-│   ├── less
-│   │   ├── bootstrap
-│   │   │   ├── variables.less
-│   │   │   ├── ...
-│   │   │   └── bootstrap.less
-│   │   ├── app
-│   │   │   ├── header.less
-│   │   │   ├── ...
-│   │   │   └── footer.less
-│   │   └── style.less
-│   ├── templates
-│   │   └── ...
-│   ├── js
-│   │   ├── models
-│   │   │   ├── user.js
-│   │   │   └── run.js
-│   │   ├── collections
-│   │   │   ├── users.js
-│   │   │   └── runs.js
-│   │   └── views
-│   ├── router.js
-│   ├── app.js 
-│   └── style.css
+|   ├── index.html
+|   ├── client
+|   │   ├── scripts
+|   │   │   ├── vendor
+|   │   │   │   ├── jquery
+|   │   │   │   │   ├── jquery.min.js
+|   │   │   │   │   └── jquery.js
+|   │   │   │   ├── backbone
+|   │   │   │   │   ├── backbone.min.js
+|   │   │   │   │   └── backbone.js
+|   │   │   │   └── underscore
+|   │   │   │   │   ├── underscore.min.js
+|   │   │   │   │   └── underscore.js
+|   │   │   │   └── forio
+|   │   │   │   │   ├── api.min.js
+|   │   │   │   │   └── api.js
+|   │   │   ├── common
+|   │   │   |   ├── routers
+|   │   │   |   |   ├── router.js
+|   │   │   |   ├── views
+|   │   │   |   |   └── view.js
+|   │   │   |   ├── templates
+|   │   │   ├── users
+|   │   │   |   ├── routers
+|   │   │   |   ├── views
+|   │   │   |   |   ├── index.js
+|   │   │   |   |   └── index
+|   │   │   |   |   |   ├── user-details-view.js
+|   │   │   |   |   |   └── user-row-view.js
+|   │   │   |   └── templates
+|   │   │   └── home
+|   │   │   |   └── ...
+|   │   ├── img
+|   │   │   └── ...
+|   │   ├── styles
+|   |   |   ├── vendor
+|   |   |   |   ├── bootstrap
+|   |   |   |   └── symbol-set
+|   |   |   ├── app
+|   |   |   |   ├── header.less
+|   |   |   |   ├── ...
+|   │   │   │   └── footer.less
+|   |   |   |   └── app.less
+|   │   │   └── style.less
+|   ├── server
+|   │   ├── lib
+|   │   |   ├── extensions
+|   │   |   ├── middleware
+|   │   |   └── mvc
+|   │   ├── common
+|   │   |   ├── views
+|   │   |   |   └── layouts
+|   │   |   |   |   └── default.hbs
+|   │   |   └── ...
+|   │   ├── users
+|   │   |   ├── controllers
+|   │   |   |   └── home-controller.js
+|   │   |   ├── views
+|   │   |   |   ├── help.hbs
+|   │   |   |   └── index.hbs
+|   │   |   └── ...
+|   │   └── home
+|   │   |   └── ...
+|   |   └── index.js
+|   ├── shared
+|   │   ├── models
+|   │   │   ├── user.js
+|   │   │   └── run.js
+|   │   └── collections
+|   │       ├── users.js
+|   │       └── runs.js
 ```
 
 ## 1.4 Indentation
