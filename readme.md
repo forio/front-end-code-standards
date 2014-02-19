@@ -116,7 +116,6 @@ Modifications made to 3rd party libraries should be indicated in the filename. F
 |   ├── uglify.js
 |   └── watch.js
 ├── src
-|   ├── index.html
 |   ├── client
 |   │   ├── scripts
 |   │   │   ├── vendor
