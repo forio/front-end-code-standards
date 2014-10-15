@@ -239,17 +239,17 @@ var UserDetails = require('./index/user-details-view');
 var UserRow = require('./index/user-row-view');
 
 module.exports = View.extend({
-   render: function () {
-      var selected = this.collection.getSelected();
+    render: function () {
+        var selected = this.collection.getSelected();
 
-      this.collection.each(function (model) {
-         this.renderChild(new UserRow({ model: model }));
-      }, this);
-      
-      if (selected) {
-         this.renderChild(new UserDetails({ model: selected }));
-      }
-   }
+        this.collection.each(function (model) {
+            this.renderChild(new UserRow({ model: model }));
+        }, this);
+
+        if (selected) {
+            this.renderChild(new UserDetails({ model: selected }));
+        }
+    }
 });
 ```
 
