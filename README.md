@@ -100,7 +100,7 @@ The point of having style guidelines is to have a common vocabulary of coding so
 
 ## 1.1 Helpful Resources
 
- * [HTML5 Boilerplate](http://html5boilerplate.com/)
+ * [Forio Generator](https://github.com/forio/forio-generator/)
  * [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
  * [Underscore.js](http://underscorejs.org/)
 
@@ -108,154 +108,115 @@ The point of having style guidelines is to have a common vocabulary of coding so
 
 Filenames should be all lowercase in order to avoid confusion on case-sensitive platforms. Filenames should contain no punctuation except for - or _ (prefer - to _).
 
-Modifications made to 3rd party libraries should be indicated in the filename. For example: highcharts.v2.1.custom.js.
-
 ### 1.2.1 Avoid duplicate filenames
 
 Appending the type of an object to the filename can help prevent duplicates and facilitate easier lookups within the devtools.
 
-Models, views, controllers, routers, and collections should always be suffixed with their type.
+For a component or its styles, it does not need a suffix.  However containers, actions, reducers, etc. should all have the suffix to avoid confusion.
 
-Example:
+For example:
 ```
-user-model.js
-users-collection.js
-users-controller.js
-users-view.js
-users-router.js
+    components/user.jsx
+    components/user.scss
+    containers/user-container.js
+    actions/user-actions.js
+    reducers/user-reducer.js
 ```
+
 
 ## 1.3.0 Project Structure
 ```
-├── grunt
-│   ├── uglify.js
-│   └── watch.js
+├── model
+|   ├── model.ctx2
+|   └── model.py
+├── server
+|   ├── index.js
+|   ├── epicenter-helper.js
+|   ├── utils.js
+|   ├── env.json
+|   ├── env.json.template
+|   └── package.json
 ├── src
-│   ├── client
-│   │   ├── scripts
-│   │   │   ├── vendor
-│   │   │   │   ├── jquery
-│   │   │   │   │   ├── jquery.min.js
-│   │   │   │   │   └── jquery.js
-│   │   │   │   ├── backbone
-│   │   │   │   │   ├── backbone.min.js
-│   │   │   │   │   └── backbone.js
-│   │   │   │   └── underscore
-│   │   │   │   │   ├── underscore.min.js
-│   │   │   │   │   └── underscore.js
-│   │   │   │   └── forio
-│   │   │   │   │   ├── api.min.js
-│   │   │   │   │   └── api.js
-│   │   │   ├── common
-│   │   │   │   ├── routers
-│   │   │   │   │   ├── router.js
-│   │   │   │   ├── views
-│   │   │   │   │   └── view.js
-│   │   │   │   ├── templates
-│   │   │   ├── users
-│   │   │   │   ├── routers
-│   │   │   │   ├── views
-│   │   │   │   │   ├── index-view.js
-│   │   │   │   │   └── index
-│   │   │   │   │   │   ├── user-details-view.js
-│   │   │   │   │   │   └── user-row-view.js
-│   │   │   │   └── templates
-│   │   │   └── home
-│   │   │   │   └── ...
-│   │   ├── img
-│   │   │   └── ...
-│   │   ├── styles
-│   │   │   ├── vendor
-│   │   │   │   ├── bootstrap
-│   │   │   │   └── symbol-set
-│   │   │   ├── app
-│   │   │   │   ├── header.less
-│   │   │   │   ├── ...
-│   │   │   │   ├── footer.less
-│   │   │   │   └── app.less
-│   │   │   └── style.less
-│   │   ├── .jshintrc
-│   │   └── favicon.ico
-│   ├── server
-│   │   ├── lib
-│   │   │   ├── extensions
-│   │   │   ├── middleware
-│   │   │   └── mvc
-│   │   ├── common
-│   │   │   ├── views
-│   │   │   │   └── layouts
-│   │   │   │   │   └── default.hbs
-│   │   │   └── ...
-│   │   ├── users
-│   │   │   ├── controllers
-│   │   │   │   └── home-controller.js
-│   │   │   ├── views
-│   │   │   │   ├── help.hbs
-│   │   │   │   └── index.hbs
-│   │   │   └── ...
-│   │   └── home
-│   │   │   └── ...
-│   │   ├── index.js
-│   │   └── .jshintrc
-│   └── shared
-│       ├── models
-│       │   ├── user.js
-│       │   └── run.js
-│       └── collections
-│           ├── users.js
-│           └── runs.js
+|   ├── actions
+|   |   ├── actions.js
+|   |   ├── input-actions.js
+|   |   ├── loading-actions.js
+|   |   ├── run-actions.js
+|   |   └── index.js
+|   ├── components
+|   |   ├── decisions
+|   |   |   ├── decisions.jsx
+|   |   |   └── decisions.scss
+|   |   ├── loading
+|   |   |   ├── loading.jsx
+|   |   |   └── loading.scss
+|   |   └── index.js
+|   ├── containers
+|   |   ├── decision-container.js
+|   |   ├── loading-container.js
+|   |   └── index.js
+|   ├── reducers
+|   |   ├── input-reducer.js
+|   |   ├── loading-reducer.js
+|   |   ├── run-reducer.js
+|   |   └── index.js
+|   ├── static
+|   |   ├── css
+|   |   |   ├── fonts
+|   |   |   ├── constants.scss
+|   |   |   ├── imports.scss
+|   |   |   └── main.scss
+|   |   ├── data
+|   |   |   └── data.json
+|   |   └── img
+|   |       ├── logo.svg
+|   |       └── x-icon.svg
+|   ├── utils
+|   |   ├── contour-extensions
+|   |   |   └── multi-tooltip.js
+|   |   ├── constants.js
+|   |   ├── endpoints.js
+|   |   ├── formatter.js
+|   |   ├── functions.js
+|   |   ├── routes.js
+|   |   └── index.js
+|   ├── app.jsx
+|   ├── index.jsx
+|   └── template.html
 ├── .gitignore
-├── .jscs.json
-├── .jshintrc
+├── .babelrc
+├── .eslintrc.js
+├── .nvmrc
+├── .sass-lint.yml
 ├── package.json
-├── Gruntfile.js
+├── postcss.config.js
+├── webpack.config.js
+├── webpack.production.js
+├── webpack.rules.js
 └── README.md
 ```
 
 ### 1.3.1 Composed structures
-Substructures of views, models, etc. should exist inside a folder named after their parent.
+Subcomponents should exist inside the parent component and be prefixed by the parent name.  All styling should be contained in the parent SCSS file.
 
-Example:
-Index view with 2 sub-views, user-details and user-row.
+The subcomponent should not be included in the Components index.js file for general use.
 
 File structure:
 ```
-src/client/scripts/users
-├── views
-│   ├── index-view.js
-│   └── index
-│   │   ├── user-details-view.js
-│   │   └── user-row-view.js
+src/components/users
+├── users.jsx
+├── users-row.jsx
+├── users.scss
 ```
 
-index-view.js:
+users.jsx:
 ```
-'use strict';
-
-// npm module
-var View = require('view');
-// sub-views
-var UserDetails = require('./index/user-details-view');
-var UserRow = require('./index/user-row-view');
-
-module.exports = View.extend({
-    render: function () {
-        var selected = this.collection.getSelected();
-
-        this.collection.each(function (model) {
-            this.renderChild(new UserRow({ model: model }));
-        }, this);
-
-        if (selected) {
-            this.renderChild(new UserDetails({ model: selected }));
-        }
-    }
-});
+import UsersRow from './users-row';
 ```
 
 
 ## 1.4 Indentation
-The unit of indentation is four spaces. Use of tabs should be avoided because (as of this writing in the 21st Century) there still is not a standard for the placement of tabstops. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
+The unit of indentation is four spaces. The use of spaces can produce a larger filesize, but the size is not significant over local networks, and the difference is eliminated by minification.
 
 
 
